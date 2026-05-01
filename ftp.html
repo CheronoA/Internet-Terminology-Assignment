@@ -3,151 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTP - File Transfer Protocol</title>
+    <title>FTP - Moving files across the internet</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
         }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
+            letter-spacing: 0.3px;
         }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
         nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
+            color: #bc6c25;
+            text-decoration: underline;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
         }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
-        .ftp-flow {
-            background: #333;
-            color: #0f0;
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        .code-box {
+            background: #2d3e3b;
+            color: #f5e6d3;
             font-family: monospace;
             padding: 20px;
             border-radius: 12px;
             margin: 20px 0;
-            text-align: center;
+            overflow-x: auto;
+            font-size: 14px;
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
+
+        .client-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             margin: 20px 0;
         }
+
+        .client-item {
+            background: #f5f0e8;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+        }
+
         .back-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 14px;
         }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
             .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>📁 FTP (File Transfer Protocol)</h1>
-            
-            <img src="images/ftp-image.jpg" alt="FTP Diagram" onerror="this.src='https://via.placeholder.com/500x300?text=FTP+Diagram'">
-            
-            <p><strong>FTP (File Transfer Protocol)</strong> is a standard network protocol used to transfer files between a client and a server over a TCP/IP network. It uses separate command and data channels.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <h2>🔧 How FTP Works</h2>
-            <div class="ftp-flow">
-                FTP Client ── Port 21 (Commands) ──→ FTP Server<br>
-                FTP Client ←── Port 20 (Data) ──→ FTP Server
-            </div>
+    <div class="card">
+        <h1>📁 FTP — Moving Files Across the Internet</h1>
 
-            <h2>📋 Common FTP Clients</h2>
-            <ul>
-                <li>FileZilla (most popular)</li>
-                <li>WinSCP</li>
-                <li>Cyberduck</li>
-                <li>Command-line FTP</li>
-            </ul>
+        <img src="images/ftp-image.jpg" alt="FTP file transfer diagram" onerror="this.src='https://via.placeholder.com/600x350?text=FTP+Diagram'">
 
-            <h2>🔒 FTP vs FTPS vs SFTP</h2>
-            <ul>
-                <li><strong>FTP</strong> - No encryption (passwords sent in plain text)</li>
-                <li><strong>FTPS</strong> - FTP with SSL/TLS encryption</li>
-                <li><strong>SFTP</strong> - SSH File Transfer Protocol (secure)</li>
-            </ul>
+        <p><strong>FTP (File Transfer Protocol)</strong> is one of the oldest protocols on the internet. It was designed specifically for one job: moving files between computers. Before Google Drive, before Dropbox, before cloud storage — there was FTP.</p>
 
-            <h2>📋 Common FTP Commands</h2>
-            <ul>
-                <li><code>USER</code> - Send username</li>
-                <li><code>PASS</code> - Send password</li>
-                <li><code>LIST</code> - List files in directory</li>
-                <li><code>GET</code> - Download file from server</li>
-                <li><code>PUT</code> - Upload file to server</li>
-                <li><code>QUIT</code> - End session</li>
-            </ul>
-
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> FTP is like a moving truck for files. You pack up your documents, images, or videos, and FTP delivers them to another computer. It's not fancy, but it gets the job done.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🔧 How FTP Works</h2>
+        <p>FTP uses two separate channels:</p>
+        <ul>
+            <li><strong>Port 21 (Command channel)</strong> — sends instructions (login, browse folders, get file list)</li>
+            <li><strong>Port 20 (Data channel)</strong> — actually transfers the file data</li>
+        </ul>
+        <div class="code-box">
+            FTP Client ── Port 21 (commands) ──→ FTP Server<br>
+            FTP Client ←── Port 20 (data) ──→ FTP Server
+        </div>
+
+        <h2>💻 Popular FTP Clients (the apps people use)</h2>
+        <div class="client-list">
+            <span class="client-item">📁 FileZilla</span>
+            <span class="client-item">📁 WinSCP</span>
+            <span class="client-item">📁 Cyberduck</span>
+            <span class="client-item">📁 Transmit</span>
+            <span class="client-item">📁 Command-line FTP</span>
+        </div>
+
+        <h2>📋 Common FTP Commands</h2>
+        <ul>
+            <li><code>USER</code> — send your username to the server</li>
+            <li><code>PASS</code> — send your password</li>
+            <li><code>LIST</code> — show files in the current directory</li>
+            <li><code>CD</code> — change directory (move to a different folder)</li>
+            <li><code>GET</code> — download a file from the server to your computer</li>
+            <li><code>PUT</code> — upload a file from your computer to the server</li>
+            <li><code>QUIT</code> — end the FTP session</li>
+        </ul>
+
+        <h2>🔒 FTP vs FTPS vs SFTP — Security Matters</h2>
+        <ul>
+            <li><strong>FTP (plain)</strong> — no encryption. Your username, password, and files are sent in plain text (anyone on the network could see them). ❌ Not secure.</li>
+            <li><strong>FTPS</strong> — FTP with SSL/TLS encryption (like HTTPS). ✅ More secure.</li>
+            <li><strong>SFTP</strong> — SSH File Transfer Protocol. Runs over SSH, very secure. ✅ Most secure.</li>
+        </ul>
+
+        <div class="note-box">
+            💭 <strong>Honest opinion:</strong> FTP is old and not very secure by today's standards. Most people use cloud storage (Google Drive, Dropbox, OneDrive) now. But FTP is still used by web developers to upload files to hosting servers, and by organizations that need automated file transfers. It's simple and it works.
+        </div>
+
+        <h2>📋 Where I might still see FTP today</h2>
+        <ul>
+            <li>Uploading website files to a hosting server</li>
+            <li>Downloading large datasets from government or research sites</li>
+            <li>Automated backups between company servers</li>
+            <li>Legacy systems (older companies that never upgraded)</li>
+        </ul>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️</p>
+    </footer>
+</div>
+
 </body>
 </html>
