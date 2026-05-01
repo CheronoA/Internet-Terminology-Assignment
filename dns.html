@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNS - Domain Name System</title>
+    <title>DNS - Internet Terminology</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -30,7 +24,6 @@
             z-index: 100;
             text-align: center;
         }
-
         nav a {
             color: #333;
             text-decoration: none;
@@ -42,18 +35,12 @@
             transition: all 0.3s ease;
             display: inline-block;
         }
-
         nav a:hover {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             transform: translateY(-2px);
         }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
+        .container { max-width: 1000px; margin: 0 auto; }
         .card {
             background: white;
             border-radius: 20px;
@@ -61,67 +48,16 @@
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
-        h1 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        h2 {
-            color: #764ba2;
-            margin: 25px 0 15px 0;
-            border-left: 4px solid #667eea;
-            padding-left: 15px;
-        }
-
-        p {
-            line-height: 1.7;
-            color: #444;
-            margin-bottom: 15px;
-        }
-
-        ul, ol {
-            margin: 15px 0 15px 30px;
-            line-height: 1.7;
-            color: #444;
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        .dns-step {
-            background: #f5f5f5;
-            border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
-            border-left: 4px solid #667eea;
-        }
-
-        .dns-step strong {
-            color: #667eea;
-        }
-
-        .dns-hierarchy {
-            background: #333;
-            color: #0f0;
-            font-family: monospace;
-            padding: 20px;
-            border-radius: 12px;
+        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
+        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
+        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
+        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
+        li { margin: 8px 0; }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
             margin: 20px 0;
-            overflow-x: auto;
         }
-
-        .diagram-placeholder {
-            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            margin: 20px 0;
-            border: 2px dashed #ccc;
-        }
-
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -132,27 +68,11 @@
             border-radius: 25px;
             transition: all 0.3s ease;
         }
-
-        .back-link:hover {
-            transform: translateX(-5px);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            color: white;
-        }
-
+        .back-link:hover { transform: translateX(-5px); }
+        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
         @media (max-width: 768px) {
-            nav a {
-                margin: 5px;
-                padding: 5px 8px;
-                font-size: 10px;
-            }
-            .card {
-                padding: 20px;
-            }
+            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+            .card { padding: 20px; }
         }
     </style>
 </head>
@@ -176,73 +96,29 @@
             <a href="web2.html">✍️ Web 2.0</a>
             <a href="web3.html">🧠 Web 3.0</a>
             <a href="web4.html">🚀 Web 4.0</a>
-            <a href="web-evolution.html">📊 Evolution</a>
         </nav>
 
         <div class="card">
             <h1>📞 DNS (Domain Name System)</h1>
             
+            <img src="images/dns-image.jpg" alt="DNS Diagram" onerror="this.src='https://via.placeholder.com/500x300?text=DNS+Diagram'">
+            
             <p><strong>DNS</strong> is the internet's phonebook. It translates human-readable domain names (like google.com) into machine-readable IP addresses (like 142.250.190.46) so computers can locate each other.</p>
 
-            <h2>🔍 How DNS Works - Step by Step</h2>
-            
-            <div class="dns-step">
-                <strong>Step 1:</strong> User types "www.example.com" into browser
-            </div>
-            <div class="dns-step">
-                <strong>Step 2:</strong> Browser checks local cache (has this site been visited before?)
-            </div>
-            <div class="dns-step">
-                <strong>Step 3:</strong> If not in cache, query goes to Recursive DNS Resolver (usually your ISP)
-            </div>
-            <div class="dns-step">
-                <strong>Step 4:</strong> Resolver queries Root DNS Server → finds .com TLD server
-            </div>
-            <div class="dns-step">
-                <strong>Step 5:</strong> TLD server points to Authoritative DNS Server for example.com
-            </div>
-            <div class="dns-step">
-                <strong>Step 6:</strong> Authoritative server returns the IP address
-            </div>
-            <div class="dns-step">
-                <strong>Step 7:</strong> Browser receives IP and connects to the website
-            </div>
-
-            <h2>🗂️ DNS Hierarchy</h2>
-            <div class="dns-hierarchy">
-                Root (.)<br>
-                ├── .com (Commercial)<br>
-                │   └── google.com<br>
-                │       └── www.google.com<br>
-                ├── .org (Organizations)<br>
-                │   └── wikipedia.org<br>
-                ├── .net (Network)<br>
-                ├── .edu (Education)<br>
-                └── Country Codes (.ke, .uk, .us, .jp)
-            </div>
-
-            <h2>📋 Types of DNS Records</h2>
-            <ul>
-                <li><strong>A Record</strong> - Maps domain to IPv4 address</li>
-                <li><strong>AAAA Record</strong> - Maps domain to IPv6 address</li>
-                <li><strong>CNAME Record</strong> - Alias of one domain to another</li>
-                <li><strong>MX Record</strong> - Mail exchange servers for email</li>
-                <li><strong>TXT Record</strong> - Text information (verification, security)</li>
-            </ul>
-
-            <div class="diagram-placeholder">
-                <strong>🗺️ DNS Lookup Process Diagram</strong><br>
-                User → Browser → Recursive Resolver → Root DNS → TLD DNS → Authoritative DNS → IP Address → Website
-                <br><br>
-                <em>📌 Download a DNS lookup diagram from Pinterest and save as <code>dns-lookup.jpg</code> in the images folder</em>
-            </div>
+            <h2>🔍 How DNS Works</h2>
+            <ol>
+                <li>User types "www.example.com" into browser</li>
+                <li>Browser checks local cache</li>
+                <li>Query goes to Recursive DNS Resolver (ISP)</li>
+                <li>Resolver queries Root DNS Server → finds .com TLD server</li>
+                <li>TLD server points to Authoritative DNS Server</li>
+                <li>Authoritative server returns the IP address</li>
+                <li>Browser connects to the website</li>
+            </ol>
 
             <a href="index.html" class="back-link">← Back to all terms</a>
         </div>
-
-        <footer>
-            <p>© 2026 Internet Terminology Assignment | Web Application Development</p>
-        </footer>
+        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
     </div>
 </body>
 </html>
