@@ -4,7 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Browsers - Our window to the internet</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Handwritten, personal, notebook-style CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, .handwritten {
+            font-family: 'Caveat', 'Georgia', cursive;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #bc6c25;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0e2d0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #b85c1a;
+            text-decoration: underline;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 12px;
+            }
+            .card {
+                padding: 20px;
+            }
+            nav a {
+                margin: 5px;
+                font-size: 11px;
+            }
+            h1 {
+                font-size: 2.3rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -52,42 +214,13 @@
         </ul>
 
         <h2>⚙️ How a browser works (behind the scenes)</h2>
-        <p>When you type a website name and press Enter, here's what happens inside your browser (in simple terms):</p>
         <ol>
             <li><strong>You enter a URL</strong> — or click a link.</li>
             <li><strong>DNS lookup</strong> — the browser finds the IP address of the website (like looking up a phone number).</li>
             <li><strong>HTTP request</strong> — the browser asks the server for the webpage.</li>
             <li><strong>Server responds</strong> — sends back HTML, CSS, JavaScript, images, etc.</li>
-            <li><strong>Parsing and rendering</strong> — the browser reads the code, builds the structure (DOM), applies styles (CSS), runs interactive code (JavaScript), and paints the page on your screen.</li>
+            <li><strong>Parsing and rendering</strong> — the browser reads the code, builds the structure, applies styles, runs interactive code, and paints the page on your screen.</li>
         </ol>
-        <p>All of this usually takes less than a second. Honestly, I find it amazing that it works at all.</p>
-
-        <img src="images/browser-architecture.jpg" alt="How a browser renders a webpage" onerror="this.src='https://via.placeholder.com/600x250?text=Browser+Rendering+Process'">
-
-        <h2>🧩 Main parts of a browser</h2>
-        <ul>
-            <li><strong>Address bar</strong> — where you type URLs.</li>
-            <li><strong>Rendering engine</strong> — the part that turns HTML/CSS into what you see (Blink for Chrome, WebKit for Safari, Gecko for Firefox).</li>
-            <li><strong>JavaScript engine</strong> — runs interactive code (V8 for Chrome, SpiderMonkey for Firefox).</li>
-            <li><strong>Network layer</strong> — handles all the HTTP requests and responses.</li>
-            <li><strong>Storage</strong> — cookies, cache, local storage (saves your login info and site preferences).</li>
-        </ul>
-
-        <h2>🔒 Privacy and security — why it matters</h2>
-        <p>Browsers also protect you from bad things:</p>
-        <ul>
-            <li><strong>HTTPS padlock</strong> — shows if a site is secure or not. I never log into a site without it.</li>
-            <li><strong>Pop-up blockers</strong> — stops annoying ads from opening new windows.</li>
-            <li><strong>Tracking protection</strong> — some browsers block advertisers from following you around the web.</li>
-            <li><strong>Incognito/Private mode</strong> — doesn't save your history or cookies (but doesn't make you invisible to your internet provider, unfortunately).</li>
-        </ul>
-
-        <div class="note-box">
-            💭 <strong>What I think about browsers:</strong> We use them every single day without thinking about how complex they are. Modern browsers are like mini operating systems — they run code, manage memory, handle security, and connect to networks. I honestly take them for granted most of the time.
-        </div>
-
-        <h2>📱 Browser on my phone vs computer</h2>
-        <p>Mobile browsers are a bit different. They have to deal with smaller screens, touch input, and slower connections sometimes. But most of the same ideas apply. Chrome on Android, Safari on iPhone, and Firefox on both — they all do the same basic job.</p>
 
         <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
