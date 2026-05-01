@@ -3,149 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web 4.0 - Internet Terminology</title>
+    <title>Web 4.0 - The Symbiotic Web</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
         }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
+            letter-spacing: 0.3px;
         }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
         nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
+            color: #bc6c25;
+            text-decoration: underline;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
         }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
-        .feature-box {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             margin: 20px 0;
         }
+
+        .tech-item {
+            background: #e8d5c4;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .evolution-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .evolution-step {
+            flex: 1;
+            min-width: 180px;
+            background: #f5f0e8;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .step1 { border-top: 5px solid #8b6b4a; }
+        .step2 { border-top: 5px solid #bc6c25; }
+        .step3 { border-top: 5px solid #5e3a2c; }
+        .step4 { border-top: 5px solid #a7b7a6; }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+        }
+
         .back-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 14px;
         }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
             .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>🚀 Web 4.0 - The Symbiotic Web</h1>
-            
-            <img src="images/web4-image.jpg" alt="Web 4.0 AI IoT" onerror="this.src='https://via.placeholder.com/500x300?text=Web+4.0+The+Symbiotic+Web'">
-            
-            <p><strong>Web 4.0</strong> is the emerging next generation of the web, often called the "Symbiotic Web." It represents the complete integration of artificial intelligence, the Internet of Things (IoT), and ubiquitous computing, creating an intelligent, always-connected experience.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <h2>🔑 Key Characteristics of Web 4.0</h2>
-            <ul>
-                <li><strong>Intelligent Agents</strong> - AI that acts on your behalf</li>
-                <li><strong>Human-AI Symbiosis</strong> - Seamless collaboration between humans and machines</li>
-                <li><strong>IoT Integration</strong> - Smart devices connected everywhere</li>
-                <li><strong>Ubiquitous Computing</strong> - Computing power everywhere, anytime</li>
-                <li><strong>Real-time Interaction</strong> - Instant responses across all devices</li>
-                <li><strong>Immersive Experiences</strong> - Virtual Reality (VR) and Augmented Reality (AR)</li>
-            </ul>
+    <div class="card">
+        <h1>🚀 Web 4.0 — The Symbiotic Web (The Future)</h1>
 
-            <h2>📋 Examples of Web 4.0 Technologies</h2>
-            <ul>
-                <li><strong>Smart Homes</strong> - AI-controlled lighting, temperature, security</li>
-                <li><strong>Virtual Assistants</strong> - Advanced AI like Jarvis concept</li>
-                <li><strong>The Metaverse</strong> - Virtual worlds and digital twins</li>
-                <li><strong>Smart Cities</strong> - IoT-connected urban infrastructure</li>
-                <li><strong>Wearable Technology</strong> - Smartwatches, AR glasses</li>
-                <li><strong>Autonomous Systems</strong> - Self-driving cars, drones</li>
-            </ul>
+        <img src="images/web4-image.jpg" alt="Web 4.0 AI and IoT" onerror="this.src='https://via.placeholder.com/600x350?text=Web+4.0+The+Symbiotic+Web'">
 
-            <h2>🌐 Web Evolution Summary</h2>
-            <ul>
-                <li><strong>Web 1.0</strong> - Read-only (Static pages)</li>
-                <li><strong>Web 2.0</strong> - Read-Write (Social media)</li>
-                <li><strong>Web 3.0</strong> - Read-Write-Own (Decentralized, blockchain)</li>
-                <li><strong>Web 4.0</strong> - Read-Write-Own-Interact (Symbiotic, AI, IoT)</li>
-            </ul>
+        <p><strong>Web 4.0</strong> is the emerging next generation of the web — often called the "Symbiotic Web." It's not fully here yet, but experts believe it will combine <strong>artificial intelligence (AI)</strong>, <strong>Internet of Things (IoT)</strong>, <strong>ubiquitous computing</strong>, and <strong>brain-computer interfaces</strong>. The goal? A web that feels like an extension of your own mind.</p>
 
-            <div class="feature-box">
-                <strong>💡 The Future:</strong> Web 4.0 envisions a world where AI agents, IoT devices, and humans work together seamlessly. Your devices will anticipate your needs before you even express them.
-            </div>
-
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> Web 1.0 was reading. Web 2.0 was talking. Web 3.0 was owning. Web 4.0 is <strong>thinking together</strong> — where AI knows what you need before you ask, your devices work together automatically, and the web is everywhere, not just on screens.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🔑 Key Characteristics of Web 4.0</h2>
+        <ul>
+            <li><strong>Symbiotic (working together)</strong> — humans and AI collaborate seamlessly</li>
+            <li><strong>Intelligent agents</strong> — AI that acts on your behalf (books appointments, shops for you)</li>
+            <li><strong>IoT integration</strong> — every device is connected (fridge, watch, car, lights, doorbell)</li>
+            <li><strong>Ubiquitous computing</strong> — the web is everywhere, not just on screens</li>
+            <li><strong>Real-time interaction</strong> — instant responses across all devices</li>
+            <li><strong>Immersive experiences</strong> — Virtual Reality (VR) and Augmented Reality (AR)</li>
+            <li><strong>Brain-computer interfaces</strong> — control devices with your thoughts (sounds like sci-fi, but it's coming)</li>
+        </ul>
+
+        <h2>📋 Technologies That Will Power Web 4.0</h2>
+        <div class="tech-list">
+            <span class="tech-item">🤖 Advanced AI</span>
+            <span class="tech-item">🌐 Internet of Things (IoT)</span>
+            <span class="tech-item">🥽 VR / AR / MR</span>
+            <span class="tech-item">🧠 Brain-Computer Interfaces</span>
+            <span class="tech-item">☁️ Edge Computing</span>
+            <span class="tech-item">📡 6G Networks</span>
+            <span class="tech-item">🪞 Digital Twins</span>
+            <span class="tech-item">🏙️ Smart Cities</span>
+        </div>
+
+        <h2>📱 Real-World Examples (What Web 4.0 Might Look Like)</h2>
+        <ul>
+            <li><strong>Smart home</strong> — your house knows when you wake up, starts coffee, adjusts temperature, and opens blinds — all without you saying a word</li>
+            <li><strong>Virtual assistant on steroids</strong> — not just Siri or Alexa, but an AI that knows your schedule, preferences, and needs. It books appointments, orders groceries, and manages your calendar</li>
+            <li><strong>The Metaverse</strong> — virtual worlds where you work, shop, and hang out with friends using VR/AR headsets</li>
+            <li><strong>Smart cities</strong> — traffic lights that adapt to traffic, trash cans that signal when full, streetlights that dim when no one is around</li>
+            <li><strong>Wearable tech</strong> — glasses that overlay information on the real world (Google Glass but actually good), watches that monitor your health and call doctors automatically</li>
+            <li><strong>Autonomous systems</strong> — self-driving cars, delivery drones, robot assistants</li>
+        </ul>
+
+        <h2>🌐 The Complete Evolution of the Web</h2>
+        <div class="evolution-box">
+            <div class="evolution-step step1">
+                <strong>📖 Web 1.0</strong><br>
+                Read<br>
+                Static pages<br>
+                ~1991-2004
+            </div>
+            <div class="evolution-step step2">
+                <strong>✍️ Web 2.0</strong><br>
+                Read-Write<br>
+                Social media<br>
+                ~2004-2016
+            </div>
+            <div class="evolution-step step3">
+                <strong>🧠 Web 3.0</strong><br>
+                Read-Write-Own<br>
+                Decentralized<br>
+                ~2016-present
+            </div>
+            <div class="evolution-step step4">
+                <strong>🚀 Web 4.0</strong><br>
+                Symbiotic<br>
+                AI + IoT everywhere<br>
+                The future
+            </div>
+        </div>
+
+        <div class="note-box">
+            💭 <strong>What I think:</strong> Web 4.0 sounds like science fiction, but if you look at how fast technology moves, it's not that far away. 20 years ago, no one had smartphones. 10 years ago, AI was a joke. Now ChatGPT writes essays and self-driving cars exist. Web 4.0 will probably be here sooner than we expect — and it will feel like magic.
+        </div>
+
+        <h2>⚠️ Concerns About Web 4.0</h2>
+        <ul>
+            <li><strong>Privacy</strong> — if everything is connected and AI knows everything about you, who has access to that data?</li>
+            <li><strong>Security</strong> — more connected devices = more ways for hackers to attack</li>
+            <li><strong>Job loss</strong> — AI and automation could replace many jobs</li>
+            <li><strong>Digital divide</strong> — rich people might have amazing AI assistants, poor people might get left behind</li>
+            <li><strong>Dependence</strong> — what happens when we can't function without our AI?</li>
+        </ul>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️</p>
+    </footer>
+</div>
+
 </body>
 </html>
