@@ -3,140 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL - Internet Terminology</title>
+    <title>URL - How we find things online</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
         }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
+            letter-spacing: 0.3px;
         }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
         nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
+            color: #bc6c25;
+            text-decoration: underline;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
         }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
         .url-display {
-            background: #333;
-            color: #0f0;
+            background: #2d3e3b;
+            color: #f5e6d3;
             font-family: monospace;
             padding: 20px;
             border-radius: 12px;
             margin: 20px 0;
             overflow-x: auto;
+            font-size: 16px;
+            word-break: break-all;
         }
+
         .url-part {
-            background: #f5f5f5;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 12px 0;
-            border-radius: 8px;
+            background: #f5f0e8;
+            border-left: 5px solid #bc6c25;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 10px;
         }
-        .url-part strong { color: #667eea; }
+
+        .url-part strong {
+            color: #bc6c25;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #fef4e6;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+        }
+
         img {
             max-width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
         }
+
         .back-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 14px;
         }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
             .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>🔗 URL (Uniform Resource Locator)</h1>
-            
-            <img src="images/url-image.jpg" alt="URL Structure" onerror="this.src='https://via.placeholder.com/500x300?text=URL+Structure'">
-            
-            <p>A <strong>URL</strong> is a reference (address) to a specific resource on the web. It specifies the protocol, host, path, and optionally query parameters or fragments.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <div class="url-display">
-                https://www.example.com:443/products/item123?id=42&color=red#reviews
-            </div>
+    <div class="card">
+        <h1>🔗 URL — How We Find Things Online</h1>
 
-            <div class="url-part"><strong>1. Scheme (https://)</strong><br>How to access the resource</div>
-            <div class="url-part"><strong>2. Subdomain (www)</strong><br>Service section within domain</div>
-            <div class="url-part"><strong>3. Domain Name (example.com)</strong><br>Human-readable host address</div>
-            <div class="url-part"><strong>4. Port (:443)</strong><br>Network endpoint (default: 80, 443)</div>
-            <div class="url-part"><strong>5. Path (/products/item123)</strong><br>Location of resource on server</div>
-            <div class="url-part"><strong>6. Query String (?id=42&color=red)</strong><br>Key-value parameters for dynamic pages</div>
-            <div class="url-part"><strong>7. Fragment (#reviews)</strong><br>Points to section within page</div>
+        <img src="images/url-image.jpg" alt="URL structure diagram" onerror="this.src='https://via.placeholder.com/600x350?text=URL+Structure'">
 
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <p>A <strong>URL (Uniform Resource Locator)</strong> is basically the address of a webpage. Just like your house has a street address so people can find you, every webpage has a URL so your browser can find it. You see URLs every day in your browser's address bar — that's where you type to go to a website.</p>
+
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> A URL is like giving directions to a friend. You tell them the street name, the building number, which floor to go to, and maybe a landmark. The URL does the same thing — it tells your browser exactly where to go on the internet.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>📋 URL Structure — Breaking It Down</h2>
+
+        <div class="url-display">
+            https://www.example.com:443/products/item123?id=42&color=red#reviews
+        </div>
+
+        <div class="url-part">
+            <strong>1. Scheme/Protocol (https://)</strong><br>
+            This tells the browser how to connect. "https://" means secure web traffic. "http://" is regular (less secure). "ftp://" is for file transfers. It's like saying "use the front door" vs "use the back door."
+        </div>
+
+        <div class="url-part">
+            <strong>2. Subdomain (www)</strong><br>
+            An optional prefix that tells the browser which part of the website you want. "www" is the most common, but you also see "blog." (blog.example.com), "shop." (shop.example.com), or "mail." (mail.example.com).
+        </div>
+
+        <div class="url-part">
+            <strong>3. Domain Name (example.com)</strong><br>
+            The main name of the website. This is what you usually remember (google.com, youtube.com, wikipedia.org). It has two parts: the name ("google") and the extension (".com", ".org", ".ke").
+        </div>
+
+        <div class="url-part">
+            <strong>4. Port Number (:443)</strong><br>
+            An optional technical detail. Most of the time you don't see it because browsers use defaults (80 for HTTP, 443 for HTTPS). It's like saying "deliver to apartment number 443." You usually don't need to type it.
+        </div>
+
+        <div class="url-part">
+            <strong>5. Path (/products/item123)</strong><br>
+            This tells the server which specific page or file you want. It's like telling someone which room to go to after they enter the building. The path often matches the folder structure on the server.
+        </div>
+
+        <div class="url-part">
+            <strong>6. Query String (?id=42&color=red)</strong><br>
+            Extra information sent to the server, usually for search results or filters. It starts with a "?" and separates parameters with "&". For example, "?q=cats" means search for cats. "?page=2&sort=newest" means go to page 2, sorted by newest.
+        </div>
+
+        <div class="url-part">
+            <strong>7. Fragment (#reviews)</strong><br>
+            Points to a specific section inside a webpage. For example, if a page has a "Reviews" section, "#reviews" will scroll you straight to it. The fragment never gets sent to the server — it's only used by your browser.
+        </div>
+
+        <h2>📝 Real URL Examples I Use Every Day</h2>
+        <div class="example-box">
+            <strong>🔍 Google Search:</strong><br>
+            <code>https://www.google.com/search?q=internet+protocols</code>
+        </div>
+        <div class="example-box">
+            <strong>🎬 YouTube Video:</strong><br>
+            <code>https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=120s</code>
+        </div>
+        <div class="example-box">
+            <strong>📁 GitHub File:</strong><br>
+            <code>https://github.com/user/repo/blob/main/README.md</code>
+        </div>
+        <div class="example-box">
+            <strong>🔗 Wikipedia Section:</strong><br>
+            <code>https://en.wikipedia.org/wiki/URL#History</code>
+        </div>
+
+        <div class="note-box">
+            💭 <strong>What I learned:</strong> I used to think URLs were just random strings. But now I see they're actually very organized. Every part has a job. Once you understand the structure, you can even edit URLs manually to navigate websites faster (like deleting the query string to reset a search).
+        </div>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️</p>
+    </footer>
+</div>
+
 </body>
 </html>
