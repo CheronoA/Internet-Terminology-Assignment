@@ -1,53 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet - Internet Terminology</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav { background: #333; padding: 10px; margin-bottom: 20px; }
-        nav a { color: white; margin-right: 15px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        h1 { color: #333; }
-        img { max-width: 500px; margin: 20px 0; border: 1px solid #ccc; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .comparison-table {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .comparison-card {
+            flex: 1;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .intranet { background: #e3f2fd; border-top: 4px solid #2196F3; }
+        .extranet { background: #fff3e0; border-top: 4px solid #FF9800; }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                margin: 5px;
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="www.html">🌐 WWW</a>
+            <a href="tcpip.html">🔌 TCP/IP</a>
+            <a href="browsers.html">🧭 Browsers</a>
+            <a href="servers.html">🖥️ Servers</a>
+            <a href="url.html">🔗 URL</a>
+            <a href="dns.html">📞 DNS</a>
+            <a href="http.html">📡 HTTP</a>
+            <a href="intranet.html">🏢 Intranet</a>
+            <a href="extranet.html">🤝 Extranet</a>
+            <a href="multitier.html">📊 Multitier</a>
+            <a href="ftp.html">📁 FTP</a>
+            <a href="html.html">📝 HTML</a>
+            <a href="web1.html">📖 Web 1.0</a>
+            <a href="web2.html">✍️ Web 2.0</a>
+            <a href="web3.html">🧠 Web 3.0</a>
+            <a href="web4.html">🚀 Web 4.0</a>
+            <a href="web-evolution.html">📊 Evolution</a>
+        </nav>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="www.html">WWW</a>
-        <a href="tcpip.html">TCP/IP</a>
-        <a href="browsers.html">Browsers</a>
-        <a href="servers.html">Servers</a>
-        <a href="url.html">URL</a>
-        <a href="dns.html">DNS</a>
-        <a href="http.html">HTTP</a>
-        <a href="intranet.html">Intranet</a>
-        <a href="extranet.html">Extranet</a>
-        <a href="multitier.html">Multitier</a>
-        <a href="ftp.html">FTP</a>
-        <a href="html.html">HTML</a>
-        <a href="web1.html">Web 1.0</a>
-        <a href="web2.html">Web 2.0</a>
-        <a href="web3.html">Web 3.0</a>
-        <a href="web4.html">Web 4.0</a>
-    </nav>
+        <div class="card">
+            <h1>🏢 Intranet</h1>
+            
+            <p>An <strong>intranet</strong> is a private network using internet technologies (HTTP, HTML) accessible only to members of an organization. It is used for internal communication, document sharing, HR systems, and collaboration tools.</p>
 
-    <h1>Intranet</h1>
-    
-    <img src="images/intranet-image.jpg" alt="Intranet network diagram">
-    
-    <p>An <strong>intranet</strong> is a private computer network within an organization that uses Internet technologies to securely share information and internal communication tools with employees.</p>
-    
-    <p>Key facts about intranets:</p>
-    <ul>
-        <li>Only accessible to authorized members inside the organization</li>
-        <li>Used for internal portals, company news, HR resources</li>
-        <li>Protected by firewalls from outside access</li>
-        <li>Improves internal communication and collaboration</li>
-    </ul>
-    
-    <p><a href="index.html">← Back to all terms</a></p>
+            <h2>🔒 Key Characteristics</h2>
+            <ul>
+                <li>Private and restricted to organization members only</li>
+                <li>Not accessible from the public internet without VPN</li>
+                <li>Protected by firewalls and authentication systems</li>
+                <li>Uses same technologies as the public web (browsers, HTTP, HTML)</li>
+            </ul>
 
+            <h2>📋 Common Intranet Uses</h2>
+            <ul>
+                <li>Company news and announcements</li>
+                <li>Employee directories and profiles</li>
+                <li>Document management and file sharing</li>
+                <li>HR portals (leave requests, payroll, benefits)</li>
+                <li>Internal wikis and knowledge bases</li>
+                <li>Project management tools</li>
+            </ul>
+
+            <h2>🆚 Intranet vs Extranet</h2>
+            <div class="comparison-table">
+                <div class="comparison-card intranet">
+                    <strong>🏢 Intranet</strong><br>
+                    Internal employees only<br>
+                    Behind corporate firewall<br>
+                    Company private network
+                </div>
+                <div class="comparison-card extranet">
+                    <strong>🤝 Extranet</strong><br>
+                    Employees + authorized outsiders<br>
+                    Secure portal with login<br>
+                    Partners, suppliers, clients
+                </div>
+            </div>
+
+            <div class="diagram-placeholder">
+                <strong>🏢 Intranet Network Diagram</strong><br>
+                Internal Employees → Firewall → Intranet Server → Company Resources
+                <br><br>
+                <em>📌 Download an intranet network diagram from Pinterest and save as <code>intranet-diagram.jpg</code> in the images folder</em>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to all terms</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Internet Terminology Assignment | Web Application Development</p>
+        </footer>
+    </div>
 </body>
 </html>
