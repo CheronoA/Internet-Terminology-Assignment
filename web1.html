@@ -3,148 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web 1.0 - Internet Terminology</title>
+    <title>Web 1.0 - The Read-Only Web</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
         }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
+            letter-spacing: 0.3px;
         }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
         nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
+            color: #bc6c25;
+            text-decoration: underline;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
         }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
         .feature-box {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
+            background: #f5f0e8;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 12px;
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             margin: 20px 0;
         }
+
+        .timeline-item {
+            background: #f5f0e8;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+        }
+
         .back-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 14px;
         }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
             .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>📖 Web 1.0 (1991-2004) - The Read-Only Web</h1>
-            
-            <img src="images/web1-image.jpg" alt="Web 1.0 Static Web" onerror="this.src='https://via.placeholder.com/500x300?text=Web+1.0+Static+Web'">
-            
-            <p><strong>Web 1.0</strong> was the first generation of the World Wide Web, often called the "Read-Only Web." Users could only consume content — there was little to no interaction or user-generated content.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <h2>🔑 Key Characteristics of Web 1.0</h2>
-            <ul>
-                <li><strong>Static pages</strong> - Content was fixed and rarely updated</li>
-                <li><strong>Read-only</strong> - Users could only view information</li>
-                <li><strong>No user interaction</strong> - No comments, likes, or reviews</li>
-                <li><strong>Information-centric</strong> - Websites were like digital brochures</li>
-                <li><strong>Owners controlled content</strong> - Only webmasters could post</li>
-            </ul>
+    <div class="card">
+        <h1>📖 Web 1.0 — The Read-Only Web (1991-2004)</h1>
 
-            <h2>📋 Examples of Web 1.0 Sites</h2>
-            <ul>
-                <li>Yahoo! (early directory style)</li>
-                <li>GeoCities (personal static pages)</li>
-                <li>Britannica Online (encyclopedia)</li>
-                <li>Early news websites (CNN, BBC)</li>
-                <li>Basic company brochure sites</li>
-            </ul>
+        <img src="images/web1-image.jpg" alt="Web 1.0 static web pages" onerror="this.src='https://via.placeholder.com/600x350?text=Web+1.0+Read-Only+Web'">
 
-            <h2>⚙️ Technologies Used</h2>
-            <ul>
-                <li>HTML (basic, no CSS3 or HTML5)</li>
-                <li>HTTP (basic protocol)</li>
-                <li>URLs (addressing)</li>
-                <li>GIF buttons and animated banners</li>
-                <li>Guestbooks (simple feedback forms)</li>
-            </ul>
+        <p><strong>Web 1.0</strong> was the first version of the World Wide Web. People often call it the "Read-Only Web" because users could only <strong>read</strong> information — they couldn't interact, comment, post, or contribute. It was like a giant digital library or a collection of online brochures.</p>
 
-            <div class="feature-box">
-                <strong>💡 Fun Fact:</strong> The first website ever created is still online at info.cern.ch. It was published on August 6, 1991.
-            </div>
-
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> Web 1.0 was like reading a newspaper. You could look at articles, but you couldn't write back, leave comments, or share your own stories. The people who owned the website were the only ones who could add or change anything.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🔑 Key Characteristics of Web 1.0</h2>
+        <ul>
+            <li><strong>Read-only</strong> — users could only view content, not create it</li>
+            <li><strong>Static pages</strong> — once a page was published, it didn't change until the webmaster edited the code</li>
+            <li><strong>No user interaction</strong> — no comments, likes, shares, or reviews</li>
+            <li><strong>Information-centric</strong> — websites were like digital versions of books or pamphlets</li>
+            <li><strong>Owners controlled everything</strong> — only webmasters could post or update content</li>
+            <li><strong>Slow and basic</strong> — dial-up internet, few images, no videos</li>
+        </ul>
+
+        <h2>📅 Timeline of Web 1.0</h2>
+        <div class="timeline">
+            <span class="timeline-item">1989: Tim Berners-Lee proposes the Web</span>
+            <span class="timeline-item">1991: First website goes live</span>
+            <span class="timeline-item">1993: Mosaic browser released</span>
+            <span class="timeline-item">1995: Internet Explorer launched</span>
+            <span class="timeline-item">1998: Google founded</span>
+            <span class="timeline-item">2004: Web 2.0 starts</span>
+        </div>
+
+        <h2>📋 Examples of Web 1.0 Sites</h2>
+        <ul>
+            <li><strong>Yahoo! Directory</strong> — a list of websites organized by category</li>
+            <li><strong>GeoCities</strong> — people could make simple static pages (but no interaction)</li>
+            <li><strong>Britannica Online</strong> — the encyclopedia moved online, but you couldn't edit it</li>
+            <li><strong>Early news websites</strong> — CNN, BBC published articles with no comments section</li>
+            <li><strong>Basic company brochure sites</strong> — "About Us," "Contact," "Products" — that's it</li>
+        </ul>
+
+        <div class="feature-box">
+            💡 <strong>Fun fact:</strong> The very first website is still online today! You can visit it at <code>info.cern.ch</code>. It's just plain text with blue links — no images, no colors, no layout. It looks super basic now, but in 1991 it was revolutionary.
+        </div>
+
+        <h2>⚙️ Technologies Used in Web 1.0</h2>
+        <ul>
+            <li><strong>HTML</strong> — basic (no CSS, no HTML5)</li>
+            <li><strong>HTTP</strong> — simple request-response</li>
+            <li><strong>URLs</strong> — addressing system</li>
+            <li><strong>GIFs</strong> — animated "Under Construction" banners</li>
+            <li><strong>Guestbooks</strong> — the only way to leave feedback (very basic)</li>
+            <li><strong>Counters</strong> — showed how many people visited the page</li>
+        </ul>
+
+        <h2>🖼️ What Web 1.0 Looked Like</h2>
+        <ul>
+            <li>Blue underlined links (still standard)</li>
+            <li>Gray or white backgrounds</li>
+            <li>Tables for layout (no CSS grids or flexbox)</li>
+            <li>Pixelated GIFs and "Under Construction" signs</li>
+            <li>Times New Roman font everywhere</li>
+            <li>Took 30+ seconds to load a single page on dial-up</li>
+        </ul>
+
+        <div class="note-box">
+            💭 <strong>What I think:</strong> I was born after Web 1.0, so I never experienced it. But when I see screenshots, it looks so simple compared to today. Still, Web 1.0 laid the foundation. Without those basic static pages, we wouldn't have YouTube, Instagram, or any of the interactive web we take for granted today.
+        </div>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️</p>
+    </footer>
+</div>
+
 </body>
 </html>
