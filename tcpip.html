@@ -1,53 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TCP/IP - Internet Terminology</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP/IP - Transmission Control Protocol/Internet Protocol</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav { background: #333; padding: 10px; margin-bottom: 20px; }
-        nav a { color: white; margin-right: 15px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        h1 { color: #333; }
-        img { max-width: 500px; margin: 20px 0; border: 1px solid #ccc; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .layer {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .layer strong {
+            color: #667eea;
+        }
+
+        .protocol-stack {
+            background: #333;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                margin: 5px;
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="www.html">🌐 WWW</a>
+            <a href="tcpip.html">🔌 TCP/IP</a>
+            <a href="browsers.html">🧭 Browsers</a>
+            <a href="servers.html">🖥️ Servers</a>
+            <a href="url.html">🔗 URL</a>
+            <a href="dns.html">📞 DNS</a>
+            <a href="http.html">📡 HTTP</a>
+            <a href="intranet.html">🏢 Intranet</a>
+            <a href="extranet.html">🤝 Extranet</a>
+            <a href="multitier.html">📊 Multitier</a>
+            <a href="ftp.html">📁 FTP</a>
+            <a href="html.html">📝 HTML</a>
+            <a href="web1.html">📖 Web 1.0</a>
+            <a href="web2.html">✍️ Web 2.0</a>
+            <a href="web3.html">🧠 Web 3.0</a>
+            <a href="web4.html">🚀 Web 4.0</a>
+            <a href="web-evolution.html">📊 Evolution</a>
+        </nav>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="www.html">WWW</a>
-        <a href="tcpip.html">TCP/IP</a>
-        <a href="browsers.html">Browsers</a>
-        <a href="servers.html">Servers</a>
-        <a href="url.html">URL</a>
-        <a href="dns.html">DNS</a>
-        <a href="http.html">HTTP</a>
-        <a href="intranet.html">Intranet</a>
-        <a href="extranet.html">Extranet</a>
-        <a href="multitier.html">Multitier</a>
-        <a href="ftp.html">FTP</a>
-        <a href="html.html">HTML</a>
-        <a href="web1.html">Web 1.0</a>
-        <a href="web2.html">Web 2.0</a>
-        <a href="web3.html">Web 3.0</a>
-        <a href="web4.html">Web 4.0</a>
-    </nav>
+        <div class="card">
+            <h1>🔌 TCP/IP (Transmission Control Protocol/Internet Protocol)</h1>
+            
+            <p><strong>TCP/IP</strong> is the fundamental suite of communication protocols that governs how data is transmitted across the internet. IP handles addressing and routing; TCP ensures reliable, ordered delivery by breaking data into packets, sending them, and reassembling them at the destination.</p>
 
-    <h1>TCP/IP (Transmission Control Protocol/Internet Protocol)</h1>
-    
-    <img src="images/tcpip-image.jpg" alt="TCP/IP diagram">
-    
-    <p><strong>TCP/IP</strong> is the fundamental communication protocol suite of the Internet. It defines how data is packaged, addressed, transmitted, routed, and received.</p>
-    
-    <p>Key facts about TCP/IP:</p>
-    <ul>
-        <li>TCP (Transmission Control Protocol) breaks data into packets and reassembles them</li>
-        <li>IP (Internet Protocol) handles addressing and routing packets</li>
-        <li>Developed in the 1970s by Vint Cerf and Bob Kahn</li>
-        <li>Forms the basis of all modern Internet communication</li>
-    </ul>
-    
-    <p><a href="index.html">← Back to all terms</a></p>
+            <h2>📊 The 4 Layers of TCP/IP</h2>
 
+            <div class="layer">
+                <strong>🌐 Layer 4 - Application Layer</strong><br>
+                Protocols: HTTP, HTTPS, FTP, SMTP, DNS, SSH<br>
+                Purpose: Provides network services to applications
+            </div>
+
+            <div class="layer">
+                <strong>🚚 Layer 3 - Transport Layer</strong><br>
+                Protocols: TCP (reliable), UDP (fast)<br>
+                Purpose: End-to-end communication, error checking, data segmentation
+            </div>
+
+            <div class="layer">
+                <strong>🗺️ Layer 2 - Internet Layer</strong><br>
+                Protocols: IP (IPv4, IPv6), ICMP, ARP<br>
+                Purpose: Addressing, packet routing, logical network mapping
+            </div>
+
+            <div class="layer">
+                <strong>🔌 Layer 1 - Network Access Layer</strong><br>
+                Protocols: Ethernet, Wi-Fi, Fiber<br>
+                Purpose: Physical transmission of data over hardware
+            </div>
+
+            <h2>📦 How TCP Works (Reliable Delivery)</h2>
+            <ol>
+                <li>Data is broken into small packets</li>
+                <li>Each packet gets a sequence number</li>
+                <li>Packets sent over IP network (may take different routes)</li>
+                <li>Receiver acknowledges each packet</li>
+                <li>Missing packets are resent</li>
+                <li>Packets reassembled in correct order</li>
+            </ol>
+
+            <h2>🗂️ TCP/IP Protocol Stack</h2>
+            <div class="protocol-stack">
+                ┌─────────────────────────────┐<br>
+                │  HTTP │ FTP │ SMTP │ DNS   │  ← Application<br>
+                ├─────────────────────────────┤<br>
+                │      TCP        │    UDP    │  ← Transport<br>
+                ├─────────────────────────────┤<br>
+                │            IP               │  ← Internet<br>
+                ├─────────────────────────────┤<br>
+                │   Ethernet │ Wi-Fi │ Fiber  │  ← Network Access<br>
+                └─────────────────────────────┘
+            </div>
+
+            <h2>🆚 TCP vs UDP</h2>
+            <ul>
+                <li><strong>TCP</strong> - Reliable, ordered, slower (web browsing, email, file transfer)</li>
+                <li><strong>UDP</strong> - Unreliable, faster, no reordering (streaming, gaming, VoIP)</li>
+            </ul>
+
+            <div class="diagram-placeholder">
+                <strong>📐 TCP/IP Protocol Suite Diagram</strong><br>
+                4 Layers: Application → Transport → Internet → Network Access
+                <br><br>
+                <em>📌 Download a TCP/IP layer diagram from Pinterest and save as <code>tcpip-layers.jpg</code> in the images folder</em>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to all terms</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Internet Terminology Assignment | Web Application Development</p>
+        </footer>
+    </div>
 </body>
 </html>
