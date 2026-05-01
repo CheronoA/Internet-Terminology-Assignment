@@ -3,154 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Wide Web - Internet Terminology</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
-        }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
-        .info-box {
-            background: #e3f2fd;
-            border-left: 4px solid #2196F3;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .timeline {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .timeline-item {
-            background: #f5f5f5;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            text-align: center;
-            flex: 1;
-        }
-        .timeline-item strong { color: #667eea; }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
-            .card { padding: 20px; }
-            .timeline-item { font-size: 10px; padding: 5px 8px; }
-        }
-    </style>
+    <title>WWW - World Wide Web explained</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>🌐 World Wide Web (WWW)</h1>
-            
-            <img src="images/www-image.jpg" alt="World Wide Web" onerror="this.src='https://via.placeholder.com/500x300?text=World+Wide+Web'">
-            
-            <p>The <strong>World Wide Web (WWW)</strong> is a system of interlinked hypertext documents and multimedia content accessed through the internet using web browsers.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <div class="info-box">
-                <strong>💡 Key Distinction:</strong> The Internet is the physical network, while the Web is the information system that runs on top of it.
-            </div>
+    <div class="card">
+        <h1>🌐 The World Wide Web</h1>
 
-            <h2>📅 History of the Web</h2>
-            <div class="timeline">
-                <div class="timeline-item"><strong>1989</strong><br>Tim Berners-Lee proposes the Web</div>
-                <div class="timeline-item"><strong>1990</strong><br>First browser and server created</div>
-                <div class="timeline-item"><strong>1991</strong><br>First website goes live</div>
-                <div class="timeline-item"><strong>1993</strong><br>CERN releases Web to public</div>
-            </div>
+        <img src="images/www-image.jpg" alt="Illustration of the World Wide Web — connected pages and links" onerror="this.src='https://via.placeholder.com/600x350?text=WWW+Illustration'">
 
-            <h2>📋 Core Web Technologies</h2>
-            <ul>
-                <li><strong>HTML</strong> - Structure and content</li>
-                <li><strong>CSS</strong> - Styling and presentation</li>
-                <li><strong>JavaScript</strong> - Interactivity</li>
-                <li><strong>HTTP/HTTPS</strong> - Data transfer protocol</li>
-            </ul>
+        <h2>What is the World Wide Web?</h2>
+        <p>The World Wide Web (often just called "the web") is like a giant digital library. You can sit at your computer or phone, open a browser, and visit millions of connected pages. These pages have text, images, videos, links — almost anything you can imagine. The web runs <strong>on top of the internet</strong>, which is the physical network of cables and routers.</p>
 
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <div class="note-box">
+            ✏️ <strong>My own way of remembering it:</strong> The internet is like the roads, highways, and postal system. The web is like all the shops, houses, and libraries you can visit using those roads. You need roads to get there, but the roads aren't the same thing as the buildings.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🎓 Who invented it and why?</h2>
+        <p>A British scientist named <strong>Tim Berners-Lee</strong> invented the web in 1989 while working at CERN (a physics lab in Switzerland). He wanted a way for scientists around the world to easily share documents and research papers. His first proposal was called "Information Management" — and it slowly grew into the web we know today.</p>
+        <p>The first website went live in 1991. It was just a simple page explaining what the web was and how to set up a server. You can still visit it today: <code>info.cern.ch</code>.</p>
+
+        <h2>🧩 How the web works (simple version)</h2>
+        <ul>
+            <li><strong>You type a URL</strong> — like <code>www.google.com</code> — into your browser.</li>
+            <li><strong>DNS lookup</strong> — a directory service translates that name into a number (IP address).</li>
+            <li><strong>Browser sends an HTTP request</strong> — asking a server for the page.</li>
+            <li><strong>Server responds</strong> — sends back HTML, CSS, images, etc.</li>
+            <li><strong>Browser renders the page</strong> — you see it on your screen.</li>
+        </ul>
+        <p>All of this usually happens in less than a second. It's honestly kind of magic when you think about it.</p>
+
+        <h2>📖 Web vs Internet — what's the difference?</h2>
+        <p>This confused me at first. Here's how I understand it:</p>
+        <ul>
+            <li><strong>Internet</strong> = hardware + protocols (cables, routers, IP addresses, TCP/IP). It connects computers together.</li>
+            <li><strong>World Wide Web</strong> = one of the services that runs on the internet (like email or FTP). It's specifically about web pages, links, URLs, and HTTP.</li>
+        </ul>
+        <p>The internet existed before the web. You can have the internet without the web (e.g., sending an email). But you cannot have the web without the internet.</p>
+
+        <img src="images/www-architecture.jpg" alt="Simple diagram showing how web requests work" onerror="this.src='https://via.placeholder.com/600x250?text=Web+Architecture+Diagram'">
+
+        <h2>📱 Real examples — where I use the web every day</h2>
+        <ul>
+            <li>Watching YouTube videos 🎬</li>
+            <li>Checking Instagram and TikTok 📱</li>
+            <li>Doing research for assignments on Wikipedia 📚</li>
+            <li>Online shopping (Amazon, Jumia) 🛍️</li>
+            <li>Using Google Maps to find places 🗺️</li>
+        </ul>
+
+        <h2>🔗 Why the web matters</h2>
+        <p>The web changed everything. Before it, information was hard to share and update. Newspapers, TV, and books were the main sources of news. Now anyone with a connection can publish a blog, start an online store, or learn almost anything for free. The web made knowledge <strong>democratic</strong> — available to everyone, not just experts.</p>
+        <p>But it also has problems (fake news, privacy issues, centralization). That's why newer versions like Web 3.0 and Web 4.0 are trying to fix some of those flaws.</p>
+
+        <div class="note-box">
+            💭 <strong>What I think:</strong> The web is one of the most important inventions in human history — right up there with the printing press. It connects people, ideas, and cultures in a way that was impossible 40 years ago.
+        </div>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️ | WWW explained from my perspective</p>
+    </footer>
+</div>
+
 </body>
 </html>
