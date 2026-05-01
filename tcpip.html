@@ -3,8 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCP/IP - How data travels online</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TCP/IP - The Language of the Internet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #bc6c25;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        .layer {
+            background: #f5f0e8;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 5px solid #bc6c25;
+        }
+
+        .layer strong {
+            color: #bc6c25;
+        }
+
+        .protocol-stack {
+            background: #2d3e3b;
+            color: #f5e6d3;
+            font-family: monospace;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+        }
+
+        .comparison {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .comparison-card {
+            flex: 1;
+            background: #f5f0e8;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
+            .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -34,55 +212,89 @@
 
         <img src="images/tcpip-image.jpg" alt="TCP/IP layers diagram" onerror="this.src='https://via.placeholder.com/600x350?text=TCP/IP+Layers'">
 
-        <h2>What is TCP/IP?</h2>
-        <p>TCP/IP stands for <strong>Transmission Control Protocol / Internet Protocol</strong>. It's basically the rulebook that every computer follows to send and receive data over the internet. Without TCP/IP, your computer wouldn't know how to talk to Google's servers, and you wouldn't be able to load this page.</p>
-        
-        <div class="note-box">
-            ✏️ <strong>My simple way to think about it:</strong> TCP/IP is like a postal service. The Internet Protocol (IP) is like writing the address on an envelope. The Transmission Control Protocol (TCP) is like the postal worker who makes sure the letter arrives in one piece, and if something gets lost, they send it again.
-        </div>
-
-        <h2>🧩 Two main parts — what each one does</h2>
-        
-        <h3>📦 IP (Internet Protocol)</h3>
-        <p>IP handles <strong>addressing and routing</strong>. Every device connected to the internet has a unique IP address (like 192.168.1.1 or 172.217.168.46). IP figures out the best path to send your data across the network — just like a GPS finds the fastest route for a delivery truck.</p>
-        
-        <h3>📬 TCP (Transmission Control Protocol)</h3>
-        <p>TCP is responsible for <strong>reliability</strong>. It breaks your data into small chunks called packets, numbers them, sends them, and then reassembles them on the other side. If a packet gets lost along the way, TCP notices and asks for it to be resent. This is why you don't see missing pieces when you load a webpage or watch a video.</p>
-
-        <h2>📊 The 4 layers of TCP/IP (how I understand them)</h2>
-        <ul>
-            <li><strong>🔌 Network Access Layer</strong> — the physical stuff (cables, Wi-Fi signals, Ethernet). This is how data actually moves through wires or through the air.</li>
-            <li><strong>🌍 Internet Layer</strong> — where IP lives. This layer handles addresses and decides which path data takes.</li>
-            <li><strong>🚚 Transport Layer</strong> — where TCP and UDP live. This layer makes sure data gets there completely and in the right order.</li>
-            <li><strong>📱 Application Layer</strong> — where HTTP, FTP, and other protocols live. This is what your apps use (browsers, email, streaming).</li>
-        </ul>
-
-        <img src="images/tcpip-layers.jpg" alt="4 layer TCP/IP model" onerror="this.src='https://via.placeholder.com/600x250?text=TCP/IP+4+Layers'">
-
-        <h2>🆚 TCP vs UDP — the fast vs reliable debate</h2>
-        <p>TCP isn't the only protocol at the Transport layer. There's also <strong>UDP (User Datagram Protocol)</strong>. Here's the difference:</p>
-        <ul>
-            <li><strong>TCP:</strong> Reliable, but slower. Used for web browsing, email, file transfers. <em>(I don't want missing parts in an email or a bank transaction.)</em></li>
-            <li><strong>UDP:</strong> Faster, but can lose data. Used for live video calls, gaming, streaming. <em>(I'd rather have a tiny glitch in a video than wait for every single packet to arrive.)</em></li>
-        </ul>
-
-        <h2>📋 Real examples — when I use TCP/IP every day</h2>
-        <ul>
-            <li>Watching Netflix 🎬 — uses TCP for reliable streaming</li>
-            <li>Playing online games 🎮 — often uses UDP for speed</li>
-            <li>Downloading a file 📥 — definitely TCP (can't have corruption)</li>
-            <li>Video call on Zoom 📹 — mostly UDP (speed over perfection)</li>
-        </ul>
+        <p><strong>TCP/IP (Transmission Control Protocol / Internet Protocol)</strong> is the fundamental set of rules that every computer follows to send and receive data over the internet. Without TCP/IP, your computer wouldn't know how to talk to Google's servers, and you wouldn't be able to load this page.</p>
 
         <div class="note-box">
-            💭 <strong>What I think:</strong> TCP/IP is the unsung hero of the internet. We never see it, but nothing would work without it. I find it amazing that your phone and a server on another continent can "agree" on rules to send data back and forth perfectly, most of the time.
+            ✏️ <strong>My simple way to think about it:</strong> TCP/IP is like a postal service. IP (Internet Protocol) is like writing the address on an envelope — it makes sure your letter gets to the right city and street. TCP (Transmission Control Protocol) is like the postal worker who tracks the package, makes sure it arrives in one piece, and asks for a replacement if something gets lost.
         </div>
+
+        <h2>📦 What Each Part Does</h2>
+
+        <div class="layer">
+            <strong>📮 IP (Internet Protocol)</strong><br>
+            IP handles <strong>addressing and routing</strong>. Every device connected to the internet has a unique IP address (like 192.168.1.1 or 172.217.168.46). IP figures out the best path to send your data across the network — just like a GPS finds the fastest route for a delivery truck.
+        </div>
+
+        <div class="layer">
+            <strong>📬 TCP (Transmission Control Protocol)</strong><br>
+            TCP is responsible for <strong>reliability</strong>. It breaks your data into small chunks called packets, numbers them, sends them, and then reassembles them on the other side. If a packet gets lost along the way, TCP notices and asks for it to be resent. This is why you don't see missing pieces when you load a webpage or download a file.
+        </div>
+
+        <h2>📊 The 4 Layers of TCP/IP</h2>
+
+        <div class="layer">
+            <strong>🔌 Layer 1 — Network Access Layer</strong><br>
+            The physical stuff — cables, Wi-Fi signals, Ethernet, fiber optics. This is how data actually moves through wires or through the air.
+        </div>
+
+        <div class="layer">
+            <strong>🌍 Layer 2 — Internet Layer</strong><br>
+            Where IP lives. This layer handles addresses and decides which path data takes across the network.
+        </div>
+
+        <div class="layer">
+            <strong>🚚 Layer 3 — Transport Layer</strong><br>
+            Where TCP and UDP live. This layer makes sure data gets there completely and in the right order (TCP) or sends it as fast as possible without guarantees (UDP).
+        </div>
+
+        <div class="layer">
+            <strong>📱 Layer 4 — Application Layer</strong><br>
+            Where HTTP, FTP, SMTP, and other protocols live. This is what your apps use — web browsing, email, file transfers, streaming.
+        </div>
+
+        <div class="protocol-stack">
+            ┌─────────────────────────────┐<br>
+            │  HTTP │ FTP │ SMTP │ DNS   │  ← Application<br>
+            ├─────────────────────────────┤<br>
+            │      TCP        │    UDP    │  ← Transport<br>
+            ├─────────────────────────────┤<br>
+            │            IP               │  ← Internet<br>
+            ├─────────────────────────────┤<br>
+            │   Ethernet │ Wi-Fi │ Fiber  │  ← Network Access<br>
+            └─────────────────────────────┘
+        </div>
+
+        <h2>🆚 TCP vs UDP — The Reliable vs Fast Debate</h2>
+        <div class="comparison">
+            <div class="comparison-card">
+                <strong>📦 TCP (Reliable)</strong><br>
+                Slower, but guaranteed delivery<br>
+                Used for: web browsing, email, file downloads, banking
+            </div>
+            <div class="comparison-card">
+                <strong>⚡ UDP (Fast)</strong><br>
+                Faster, but can lose data<br>
+                Used for: live video calls, gaming, streaming, VoIP
+            </div>
+        </div>
+
+        <div class="note-box">
+            💭 <strong>What I learned:</strong> TCP/IP is the unsung hero of the internet. We never see it, but nothing would work without it. It's amazing that your phone and a server on another continent can "agree" on rules to send data back and forth perfectly, most of the time.
+        </div>
+
+        <h2>📋 Real Examples — Where I Use TCP/IP Every Day</h2>
+        <ul>
+            <li><strong>Watching YouTube</strong> — uses TCP for reliable streaming</li>
+            <li><strong>Playing online games</strong> — often uses UDP for speed</li>
+            <li><strong>Downloading a file</strong> — definitely TCP (can't have corruption)</li>
+            <li><strong>Zoom video call</strong> — mostly UDP (speed over perfection)</li>
+        </ul>
 
         <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
 
     <footer>
-        <p>Made by me, for my WAD assignment 🖊️ | TCP/IP explained my way</p>
+        <p>Made by me, for my WAD assignment 🖊️</p>
     </footer>
 </div>
 
