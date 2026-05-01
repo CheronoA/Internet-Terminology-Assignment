@@ -91,10 +91,22 @@
             margin: 8px 0;
         }
 
+        .url-display {
+            background: #333;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-size: 16px;
+            word-break: break-all;
+        }
+
         .url-part {
             background: #f5f5f5;
             border-left: 4px solid #667eea;
-            padding: 12px;
+            padding: 15px;
             margin: 12px 0;
             border-radius: 8px;
         }
@@ -102,17 +114,14 @@
         .url-part strong {
             color: #667eea;
             font-family: monospace;
+            font-size: 16px;
         }
 
-        .url-example {
-            background: #333;
-            color: #0f0;
-            font-family: monospace;
+        .example-box {
+            background: #e3f2fd;
             padding: 15px;
             border-radius: 10px;
-            margin: 20px 0;
-            overflow-x: auto;
-            font-size: 14px;
+            margin: 15px 0;
         }
 
         .diagram-placeholder {
@@ -178,6 +187,7 @@
             <a href="web2.html">✍️ Web 2.0</a>
             <a href="web3.html">🧠 Web 3.0</a>
             <a href="web4.html">🚀 Web 4.0</a>
+            <a href="web-evolution.html">📊 Evolution</a>
         </nav>
 
         <div class="card">
@@ -187,57 +197,71 @@
 
             <h2>📋 URL Structure Breakdown</h2>
             
-            <div class="url-example">
+            <div class="url-display">
                 https://www.example.com:443/products/item123?id=42&color=red#reviews
             </div>
 
             <div class="url-part">
                 <strong>1. Scheme/Protocol (https://)</strong><br>
-                How to access the resource. Common schemes: http, https, ftp, file.
+                How to access the resource. Common schemes: http, https, ftp, file, mailto.
             </div>
 
             <div class="url-part">
                 <strong>2. Subdomain (www)</strong><br>
-                Optional prefix identifying a service or section within the domain (e.g., blog., shop., mail.)
+                Optional prefix identifying a service or section within the domain (e.g., blog., shop., mail., api.)
             </div>
 
             <div class="url-part">
                 <strong>3. Domain Name (example.com)</strong><br>
-                Human-readable host address (the website name).
+                Human-readable host address (the website name). The domain name includes the second-level domain (example) and top-level domain (.com).
             </div>
 
             <div class="url-part">
                 <strong>4. Port Number (:443)</strong><br>
-                Network endpoint (optional; default: 80 for HTTP, 443 for HTTPS).
+                Network endpoint (optional; default: 80 for HTTP, 443 for HTTPS). Other ports: 21 (FTP), 22 (SSH), 3306 (MySQL).
             </div>
 
             <div class="url-part">
                 <strong>5. Path (/products/item123)</strong><br>
-                Location of the resource on the server (similar to file path on a computer).
+                Location of the resource on the server (similar to file path on a computer). Can be actual file path or virtual path processed by server.
             </div>
 
             <div class="url-part">
                 <strong>6. Query String (?id=42&color=red)</strong><br>
-                Key-value parameters for dynamic pages (e.g., search results, filters).
+                Key-value parameters for dynamic pages (e.g., search results, filters, pagination). Starts with ? and separates parameters with &.
             </div>
 
             <div class="url-part">
                 <strong>7. Fragment (#reviews)</strong><br>
-                Points to a specific section within the page (anchor link).
+                Points to a specific section within the page (anchor link). Does not send to server — browser only. Used for in-page navigation.
             </div>
 
-            <h2>📝 Example URLs</h2>
-            <ul>
-                <li><code>https://www.google.com/search?q=internet</code> - Search query</li>
-                <li><code>https://youtu.be/watch?v=dQw4w9WgXcQ</code> - YouTube video</li>
-                <li><code>https://github.com/user/repo/blob/main/README.md</code> - GitHub file</li>
-            </ul>
+            <h2>📝 Real URL Examples</h2>
+            <div class="example-box">
+                <strong>🔍 Google Search:</strong><br>
+                <code>https://www.google.com/search?q=tcp/ip+protocol</code>
+            </div>
+            <div class="example-box">
+                <strong>🎬 YouTube Video:</strong><br>
+                <code>https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=120</code>
+            </div>
+            <div class="example-box">
+                <strong>📁 GitHub File:</strong><br>
+                <code>https://github.com/user/repo/blob/main/README.md</code>
+            </div>
+            <div class="example-box">
+                <strong>🔗 Wikipedia Section:</strong><br>
+                <code>https://en.wikipedia.org/wiki/URL#History</code>
+            </div>
+
+            <h2>📊 URL Encoding</h2>
+            <p>Some characters must be encoded in URLs: space becomes %20, # becomes %23, & becomes %26, / becomes %2F.</p>
 
             <div class="diagram-placeholder">
-                <strong>🗺️ URL Structure Diagram</strong><br>
-                Scheme :// Subdomain . Domain . TLD : Port / Path ? Query # Fragment
+                <strong>🗺️ URL Anatomy Diagram</strong><br>
+                https :// www . example . com : 443 / products ? id=42 # reviews
                 <br><br>
-                <em>📌 Download a URL structure diagram from Pinterest and save as <code>url-structure.jpg</code> in the images folder</em>
+                <em>📌 Download a URL structure diagram from Pinterest and save as <code>url-anatomy.jpg</code> in the images folder</em>
             </div>
 
             <a href="index.html" class="back-link">← Back to all terms</a>
