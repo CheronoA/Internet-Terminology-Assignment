@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Terminology Glossary - WAD Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Term Grid */
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Term Card */
+        .term-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .term-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .term-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .term-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .term-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                margin: 5px;
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+            .term-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="www.html">🌐 WWW</a>
+            <a href="tcpip.html">🔌 TCP/IP</a>
+            <a href="browsers.html">🧭 Browsers</a>
+            <a href="servers.html">🖥️ Servers</a>
+            <a href="url.html">🔗 URL</a>
+            <a href="dns.html">📞 DNS</a>
+            <a href="http.html">📡 HTTP</a>
+            <a href="intranet.html">🏢 Intranet</a>
+            <a href="extranet.html">🤝 Extranet</a>
+            <a href="multitier.html">📊 Multitier</a>
+            <a href="ftp.html">📁 FTP</a>
+            <a href="html.html">📝 HTML</a>
+            <a href="web1.html">📖 Web 1.0</a>
+            <a href="web2.html">✍️ Web 2.0</a>
+            <a href="web3.html">🧠 Web 3.0</a>
+            <a href="web4.html">🚀 Web 4.0</a>
+        </nav>
+
+        <div class="header">
+            <h1>📚 Internet Terminology Glossary</h1>
+            <p>Your complete guide to understanding the fundamental concepts of the World Wide Web</p>
+        </div>
+
+        <div class="term-grid">
+            <a href="www.html" class="term-card">
+                <div class="term-icon">🌐</div>
+                <h3>World Wide Web</h3>
+                <p>A system of interlinked hypertext documents accessed via the internet using web browsers.</p>
+            </a>
+            <a href="tcpip.html" class="term-card">
+                <div class="term-icon">🔌</div>
+                <h3>TCP/IP</h3>
+                <p>The fundamental communication protocol suite governing how data is transmitted across the internet.</p>
+            </a>
+            <a href="browsers.html" class="term-card">
+                <div class="term-icon">🧭</div>
+                <h3>Web Browsers</h3>
+                <p>Client software that retrieves, processes, and renders web content.</p>
+            </a>
+            <a href="servers.html" class="term-card">
+                <div class="term-icon">🖥️</div>
+                <h3>Web Servers</h3>
+                <p>Hardware or software that stores, processes, and delivers web pages.</p>
+            </a>
+            <a href="url.html" class="term-card">
+                <div class="term-icon">🔗</div>
+                <h3>URL</h3>
+                <p>A reference (address) to a specific resource on the web.</p>
+            </a>
+            <a href="dns.html" class="term-card">
+                <div class="term-icon">📞</div>
+                <h3>DNS</h3>
+                <p>The internet phonebook that translates domain names to IP addresses.</p>
+            </a>
+            <a href="http.html" class="term-card">
+                <div class="term-icon">📡</div>
+                <h3>HTTP</h3>
+                <p>The application-layer protocol used to transfer data on the web.</p>
+            </a>
+            <a href="intranet.html" class="term-card">
+                <div class="term-icon">🏢</div>
+                <h3>Intranet</h3>
+                <p>A private network using internet technologies accessible only to organization members.</p>
+            </a>
+            <a href="extranet.html" class="term-card">
+                <div class="term-icon">🤝</div>
+                <h3>Extranet</h3>
+                <p>An extension of an intranet that allows authorized external access.</p>
+            </a>
+            <a href="multitier.html" class="term-card">
+                <div class="term-icon">📊</div>
+                <h3>Multitier Architecture</h3>
+                <p>Separation of web applications into distinct layers: presentation, logic, and data.</p>
+            </a>
+            <a href="ftp.html" class="term-card">
+                <div class="term-icon">📁</div>
+                <h3>FTP</h3>
+                <p>Standard network protocol used to transfer files between client and server.</p>
+            </a>
+            <a href="html.html" class="term-card">
+                <div class="term-icon">📝</div>
+                <h3>HTML</h3>
+                <p>The standard markup language used to create and structure web pages.</p>
+            </a>
+            <a href="web1.html" class="term-card">
+                <div class="term-icon">📖</div>
+                <h3>Web 1.0</h3>
+                <p>The read-only web (1991-2004) - static pages, no user interaction.</p>
+            </a>
+            <a href="web2.html" class="term-card">
+                <div class="term-icon">✍️</div>
+                <h3>Web 2.0</h3>
+                <p>The read-write web (2004-2016) - social media, user-generated content.</p>
+            </a>
+            <a href="web3.html" class="term-card">
+                <div class="term-icon">🧠</div>
+                <h3>Web 3.0</h3>
+                <p>The semantic, decentralized web using blockchain and AI.</p>
+            </a>
+            <a href="web4.html" class="term-card">
+                <div class="term-icon">🚀</div>
+                <h3>Web 4.0</h3>
+                <p>The symbiotic web - AI-driven, IoT integrated, intelligent agents.</p>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 Internet Terminology Assignment | Web Application Development</p>
+        </footer>
+    </div>
+</body>
+</html>
