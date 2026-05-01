@@ -1,53 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Wide Web - Internet Terminology</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav { background: #333; padding: 10px; margin-bottom: 20px; }
-        nav a { color: white; margin-right: 15px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        h1 { color: #333; }
-        img { max-width: 500px; margin: 20px 0; border: 1px solid #ccc; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            background: #f5f5f5;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .timeline-item strong {
+            color: #667eea;
+        }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                margin: 5px;
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            .card {
+                padding: 20px;
+            }
+            .timeline-item {
+                font-size: 10px;
+                padding: 5px 8px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="www.html">🌐 WWW</a>
+            <a href="tcpip.html">🔌 TCP/IP</a>
+            <a href="browsers.html">🧭 Browsers</a>
+            <a href="servers.html">🖥️ Servers</a>
+            <a href="url.html">🔗 URL</a>
+            <a href="dns.html">📞 DNS</a>
+            <a href="http.html">📡 HTTP</a>
+            <a href="intranet.html">🏢 Intranet</a>
+            <a href="extranet.html">🤝 Extranet</a>
+            <a href="multitier.html">📊 Multitier</a>
+            <a href="ftp.html">📁 FTP</a>
+            <a href="html.html">📝 HTML</a>
+            <a href="web1.html">📖 Web 1.0</a>
+            <a href="web2.html">✍️ Web 2.0</a>
+            <a href="web3.html">🧠 Web 3.0</a>
+            <a href="web4.html">🚀 Web 4.0</a>
+            <a href="web-evolution.html">📊 Evolution</a>
+        </nav>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="www.html">WWW</a>
-        <a href="tcpip.html">TCP/IP</a>
-        <a href="browsers.html">Browsers</a>
-        <a href="servers.html">Servers</a>
-        <a href="url.html">URL</a>
-        <a href="dns.html">DNS</a>
-        <a href="http.html">HTTP</a>
-        <a href="intranet.html">Intranet</a>
-        <a href="extranet.html">Extranet</a>
-        <a href="multitier.html">Multitier</a>
-        <a href="ftp.html">FTP</a>
-        <a href="html.html">HTML</a>
-        <a href="web1.html">Web 1.0</a>
-        <a href="web2.html">Web 2.0</a>
-        <a href="web3.html">Web 3.0</a>
-        <a href="web4.html">Web 4.0</a>
-    </nav>
+        <div class="card">
+            <h1>🌐 World Wide Web (WWW)</h1>
+            
+            <p>The <strong>World Wide Web (WWW)</strong> is a system of interlinked hypertext documents and multimedia content accessed through the internet using web browsers. The web is not the internet itself — it is a service that runs on top of the internet infrastructure.</p>
 
-    <h1>World Wide Web (WWW)</h1>
-    
-    <img src="images/www-image.jpg" alt="World Wide Web illustration">
-    
-    <p>The <strong>World Wide Web (WWW)</strong> is an information system where documents and other web resources are identified by URLs, interlinked by hypertext links, and can be accessed via the Internet.</p>
-    
-    <p>Key facts about the WWW:</p>
-    <ul>
-        <li>Invented by Tim Berners-Lee in 1989</li>
-        <li>Built on top of the Internet infrastructure</li>
-        <li>Uses HTTP/HTTPS to transfer data</li>
-        <li>Web pages are written in HTML</li>
-    </ul>
-    
-    <p><a href="index.html">← Back to all terms</a></p>
+            <div class="info-box">
+                <strong>💡 Key Distinction:</strong> The Internet is the physical network (cables, routers, protocols), while the Web is the information system (websites, pages, links) that runs on top of it.
+            </div>
 
+            <h2>📅 History of the Web</h2>
+            <div class="timeline">
+                <div class="timeline-item"><strong>1989</strong><br>Tim Berners-Lee proposes the Web at CERN</div>
+                <div class="timeline-item"><strong>1990</strong><br>First web browser and server created</div>
+                <div class="timeline-item"><strong>1991</strong><br>First website goes live</div>
+                <div class="timeline-item"><strong>1993</strong><br>CERN releases Web to public domain</div>
+                <div class="timeline-item"><strong>1995</strong><br>Internet Explorer launched</div>
+            </div>
+
+            <h2>🔧 How the Web Works</h2>
+            <ol>
+                <li><strong>User enters URL</strong> - Type a web address or click a link</li>
+                <li><strong>Browser sends HTTP request</strong> - Asks server for the webpage</li>
+                <li><strong>Server processes request</strong> - Locates the file or generates content</li>
+                <li><strong>Server sends HTTP response</strong> - Returns HTML, CSS, JS, images</li>
+                <li><strong>Browser renders page</strong> - Parses code and displays visually</li>
+            </ol>
+
+            <h2>📋 Core Web Technologies</h2>
+            <ul>
+                <li><strong>HTML</strong> - Structure and content of web pages</li>
+                <li><strong>CSS</strong> - Styling and visual presentation</li>
+                <li><strong>JavaScript</strong> - Interactivity and dynamic behavior</li>
+                <li><strong>HTTP/HTTPS</strong> - Protocol for transferring data</li>
+                <li><strong>URL</strong> - Address system for locating resources</li>
+            </ul>
+
+            <h2>🌍 Web vs Internet</h2>
+            <ul>
+                <li><strong>Internet</strong> - Physical infrastructure (cables, routers, IP addresses)</li>
+                <li><strong>World Wide Web</strong> - Information system (websites, hyperlinks, URLs)</li>
+                <li>Other internet services: Email (SMTP), File Transfer (FTP), VoIP (Skype)</li>
+            </ul>
+
+            <!-- Your existing image will display here -->
+            <img src="images/www-image.jpg" alt="World Wide Web illustration" onerror="this.src='https://via.placeholder.com/600x300?text=WWW+Image'">
+
+            <div class="diagram-placeholder">
+                <strong>🌐 Web Architecture Diagram</strong><br>
+                Browser → HTTP Request → Web Server → Database → HTTP Response → Browser
+                <br><br>
+                <em>📌 Download a WWW architecture diagram from Pinterest and save as <code>www-architecture.jpg</code> in the images folder</em>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to all terms</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Internet Terminology Assignment | Web Application Development</p>
+        </footer>
+    </div>
 </body>
 </html>
