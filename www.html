@@ -3,8 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WWW - World Wide Web explained</title>
-    <link rel="stylesheet" href="style.css">
+    <title>World Wide Web - The system of linked pages</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #bc6c25;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            background: #f5f0e8;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
+            .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -30,63 +185,74 @@
     </nav>
 
     <div class="card">
-        <h1>🌐 The World Wide Web</h1>
+        <h1>🌐 World Wide Web — The System of Linked Pages</h1>
 
-        <img src="images/www-image.jpg" alt="Illustration of the World Wide Web — connected pages and links" onerror="this.src='https://via.placeholder.com/600x350?text=WWW+Illustration'">
+        <img src="images/www-image.jpg" alt="World Wide Web illustration" onerror="this.src='https://via.placeholder.com/600x350?text=World+Wide+Web'">
 
-        <h2>What is the World Wide Web?</h2>
-        <p>The World Wide Web (often just called "the web") is like a giant digital library. You can sit at your computer or phone, open a browser, and visit millions of connected pages. These pages have text, images, videos, links — almost anything you can imagine. The web runs <strong>on top of the internet</strong>, which is the physical network of cables and routers.</p>
+        <p>The <strong>World Wide Web (WWW)</strong> is a system of interlinked hypertext documents and multimedia content that you access through the internet using a web browser. The web is <strong>not</strong> the same thing as the internet — it's a service that runs on top of the internet infrastructure.</p>
 
         <div class="note-box">
-            ✏️ <strong>My own way of remembering it:</strong> The internet is like the roads, highways, and postal system. The web is like all the shops, houses, and libraries you can visit using those roads. You need roads to get there, but the roads aren't the same thing as the buildings.
+            ✏️ <strong>My simple way to think about it:</strong> The internet is like the roads, highways, and postal system. The web is like all the shops, houses, and libraries you can visit using those roads. You need the internet to access the web, but the web is just one of many things you can do on the internet (email, FTP, gaming are others).
         </div>
 
-        <h2>🎓 Who invented it and why?</h2>
-        <p>A British scientist named <strong>Tim Berners-Lee</strong> invented the web in 1989 while working at CERN (a physics lab in Switzerland). He wanted a way for scientists around the world to easily share documents and research papers. His first proposal was called "Information Management" — and it slowly grew into the web we know today.</p>
-        <p>The first website went live in 1991. It was just a simple page explaining what the web was and how to set up a server. You can still visit it today: <code>info.cern.ch</code>.</p>
+        <h2>📅 History of the Web — Who Invented It?</h2>
+        <p>A British scientist named <strong>Tim Berners-Lee</strong> invented the web in 1989 while working at CERN (a physics lab in Switzerland). He wanted a way for scientists around the world to easily share documents and research papers. The first website went live in 1991 — it was just a simple page explaining what the web was and how to set up a server.</p>
 
-        <h2>🧩 How the web works (simple version)</h2>
-        <ul>
-            <li><strong>You type a URL</strong> — like <code>www.google.com</code> — into your browser.</li>
-            <li><strong>DNS lookup</strong> — a directory service translates that name into a number (IP address).</li>
-            <li><strong>Browser sends an HTTP request</strong> — asking a server for the page.</li>
+        <div class="timeline">
+            <span class="timeline-item">📌 1989: Tim Berners-Lee proposes the Web</span>
+            <span class="timeline-item">📌 1990: First web browser and server created</span>
+            <span class="timeline-item">📌 1991: First website goes live</span>
+            <span class="timeline-item">📌 1993: CERN releases the Web to the public (free!)</span>
+            <span class="timeline-item">📌 1995: Internet Explorer launched</span>
+            <span class="timeline-item">📌 2004: Web 2.0 era begins</span>
+        </div>
+
+        <h2>🧩 How the Web Works — Simple Version</h2>
+        <ol>
+            <li><strong>You type a URL</strong> — like www.google.com — into your browser</li>
+            <li><strong>DNS lookup</strong> — a directory service translates that name into an IP address</li>
+            <li><strong>Browser sends an HTTP request</strong> — asking a server for the page</li>
             <li><strong>Server responds</strong> — sends back HTML, CSS, images, etc.</li>
-            <li><strong>Browser renders the page</strong> — you see it on your screen.</li>
-        </ul>
-        <p>All of this usually happens in less than a second. It's honestly kind of magic when you think about it.</p>
+            <li><strong>Browser renders the page</strong> — you see it on your screen</li>
+        </ol>
+        <p>All of this usually happens in less than a second. It's honestly kind of amazing when you think about it.</p>
 
-        <h2>📖 Web vs Internet — what's the difference?</h2>
-        <p>This confused me at first. Here's how I understand it:</p>
+        <h2>📖 Web vs Internet — What's the Difference?</h2>
         <ul>
             <li><strong>Internet</strong> = hardware + protocols (cables, routers, IP addresses, TCP/IP). It connects computers together.</li>
             <li><strong>World Wide Web</strong> = one of the services that runs on the internet (like email or FTP). It's specifically about web pages, links, URLs, and HTTP.</li>
         </ul>
-        <p>The internet existed before the web. You can have the internet without the web (e.g., sending an email). But you cannot have the web without the internet.</p>
+        <p>The internet existed before the web (since the 1960s). You can have the internet without the web (like sending an email). But you cannot have the web without the internet.</p>
 
-        <img src="images/www-architecture.jpg" alt="Simple diagram showing how web requests work" onerror="this.src='https://via.placeholder.com/600x250?text=Web+Architecture+Diagram'">
-
-        <h2>📱 Real examples — where I use the web every day</h2>
+        <h2>📱 Where I Use the Web Every Day</h2>
         <ul>
-            <li>Watching YouTube videos 🎬</li>
+            <li>Watching YouTube tutorials for my assignments 🎬</li>
             <li>Checking Instagram and TikTok 📱</li>
-            <li>Doing research for assignments on Wikipedia 📚</li>
+            <li>Doing research for essays on Wikipedia 📚</li>
             <li>Online shopping (Amazon, Jumia) 🛍️</li>
             <li>Using Google Maps to find places 🗺️</li>
+            <li>Checking my university student portal 📧</li>
+            <li>Streaming music on Spotify 🎵</li>
         </ul>
 
-        <h2>🔗 Why the web matters</h2>
-        <p>The web changed everything. Before it, information was hard to share and update. Newspapers, TV, and books were the main sources of news. Now anyone with a connection can publish a blog, start an online store, or learn almost anything for free. The web made knowledge <strong>democratic</strong> — available to everyone, not just experts.</p>
-        <p>But it also has problems (fake news, privacy issues, centralization). That's why newer versions like Web 3.0 and Web 4.0 are trying to fix some of those flaws.</p>
-
         <div class="note-box">
-            💭 <strong>What I think:</strong> The web is one of the most important inventions in human history — right up there with the printing press. It connects people, ideas, and cultures in a way that was impossible 40 years ago.
+            💭 <strong>What I think:</strong> The web is one of the most important inventions in human history — right up there with the printing press. It connects people, ideas, and cultures in a way that was impossible 40 years ago. I literally can't imagine my life without it. But it also has problems (fake news, privacy issues, addiction). That's why newer versions like Web 3.0 and Web 4.0 are trying to fix some of those things.
         </div>
+
+        <h2>🔧 Core Technologies That Make the Web Work</h2>
+        <ul>
+            <li><strong>HTML</strong> — gives structure and content to pages</li>
+            <li><strong>CSS</strong> — adds style and visual design</li>
+            <li><strong>JavaScript</strong> — makes pages interactive (buttons, animations, forms)</li>
+            <li><strong>HTTP/HTTPS</strong> — the protocol for transferring data</li>
+            <li><strong>URLs</strong> — the addressing system for finding resources</li>
+        </ul>
 
         <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
 
     <footer>
-        <p>Made by me, for my WAD assignment 🖊️ | WWW explained from my perspective</p>
+        <p>Made by me, for my WAD assignment 🖊️</p>
     </footer>
 </div>
 
