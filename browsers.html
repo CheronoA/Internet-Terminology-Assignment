@@ -3,149 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Browsers - Internet Terminology</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
-        }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
-        .browser-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .browser-item {
-            background: #f5f5f5;
-            padding: 15px 20px;
-            border-radius: 12px;
-            flex: 1;
-            min-width: 120px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .browser-item:hover {
-            transform: translateY(-5px);
-            background: #667eea;
-            color: white;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
-            .card { padding: 20px; }
-        }
-    </style>
+    <title>Web Browsers - Our window to the internet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>🧭 Web Browsers</h1>
-            
-            <img src="images/browsers-image.jpg" alt="Web Browsers" onerror="this.src='https://via.placeholder.com/500x300?text=Web+Browsers'">
-            
-            <p>A <strong>web browser</strong> is client software that retrieves, processes, and renders web content. It sends HTTP requests to web servers, receives HTML/CSS/JS responses, and displays them as visual pages.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <h2>🌍 Popular Web Browsers</h2>
-            <div class="browser-list">
-                <div class="browser-item">🌐 Google Chrome</div>
-                <div class="browser-item">🦊 Mozilla Firefox</div>
-                <div class="browser-item">🧭 Safari</div>
-                <div class="browser-item">🔷 Microsoft Edge</div>
-                <div class="browser-item">📱 Opera</div>
-            </div>
+    <div class="card">
+        <h1>🧭 Web Browsers — Our Window to the Internet</h1>
 
-            <h2>⚙️ How Browsers Work</h2>
-            <ol>
-                <li><strong>Navigation</strong> - User enters URL or clicks a link</li>
-                <li><strong>DNS Lookup</strong> - Browser finds server IP address</li>
-                <li><strong>HTTP Request</strong> - Browser requests the webpage</li>
-                <li><strong>Parse HTML</strong> - Browser builds DOM tree</li>
-                <li><strong>Render</strong> - Display the page to user</li>
-            </ol>
+        <img src="images/browsers-image.jpg" alt="Popular web browsers collage" onerror="this.src='https://via.placeholder.com/600x350?text=Popular+Web+Browsers'">
 
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <h2>What is a web browser?</h2>
+        <p>A <strong>web browser</strong> is the software you use to visit websites. It's like a magical window that lets you see and interact with the World Wide Web. When you type a URL like <code>google.com</code> or click a link, the browser goes out, fetches the webpage from a server somewhere in the world, and then displays it on your screen — with text, images, videos, and buttons all arranged nicely.</p>
+        
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> A browser is like a restaurant waiter. You tell them what you want (type a URL). They go to the kitchen (the web server), bring back your food (the webpage), and serve it to you in a nice plate (rendered on your screen). Without the waiter, you'd have to go to the kitchen yourself — which would be a huge mess.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🌍 Popular browsers I use (or have tried)</h2>
+        <ul>
+            <li><strong>Google Chrome</strong> — the most popular one. Fast, but eats RAM like crazy. I use it for most things.</li>
+            <li><strong>Mozilla Firefox</strong> — more privacy-focused. I use it when I don't want Google tracking everything.</li>
+            <li><strong>Microsoft Edge</strong> — the new version is actually good. It's built on Chromium (same as Chrome).</li>
+            <li><strong>Safari</strong> — only on Apple devices. Very efficient on MacBooks.</li>
+            <li><strong>Opera</strong> — has built-in VPN and some cool features. I've tried it a few times.</li>
+            <li><strong>Brave</strong> — blocks ads and trackers by default. Some of my friends swear by it.</li>
+        </ul>
+
+        <h2>⚙️ How a browser works (behind the scenes)</h2>
+        <p>When you type a website name and press Enter, here's what happens inside your browser (in simple terms):</p>
+        <ol>
+            <li><strong>You enter a URL</strong> — or click a link.</li>
+            <li><strong>DNS lookup</strong> — the browser finds the IP address of the website (like looking up a phone number).</li>
+            <li><strong>HTTP request</strong> — the browser asks the server for the webpage.</li>
+            <li><strong>Server responds</strong> — sends back HTML, CSS, JavaScript, images, etc.</li>
+            <li><strong>Parsing and rendering</strong> — the browser reads the code, builds the structure (DOM), applies styles (CSS), runs interactive code (JavaScript), and paints the page on your screen.</li>
+        </ol>
+        <p>All of this usually takes less than a second. Honestly, I find it amazing that it works at all.</p>
+
+        <img src="images/browser-architecture.jpg" alt="How a browser renders a webpage" onerror="this.src='https://via.placeholder.com/600x250?text=Browser+Rendering+Process'">
+
+        <h2>🧩 Main parts of a browser</h2>
+        <ul>
+            <li><strong>Address bar</strong> — where you type URLs.</li>
+            <li><strong>Rendering engine</strong> — the part that turns HTML/CSS into what you see (Blink for Chrome, WebKit for Safari, Gecko for Firefox).</li>
+            <li><strong>JavaScript engine</strong> — runs interactive code (V8 for Chrome, SpiderMonkey for Firefox).</li>
+            <li><strong>Network layer</strong> — handles all the HTTP requests and responses.</li>
+            <li><strong>Storage</strong> — cookies, cache, local storage (saves your login info and site preferences).</li>
+        </ul>
+
+        <h2>🔒 Privacy and security — why it matters</h2>
+        <p>Browsers also protect you from bad things:</p>
+        <ul>
+            <li><strong>HTTPS padlock</strong> — shows if a site is secure or not. I never log into a site without it.</li>
+            <li><strong>Pop-up blockers</strong> — stops annoying ads from opening new windows.</li>
+            <li><strong>Tracking protection</strong> — some browsers block advertisers from following you around the web.</li>
+            <li><strong>Incognito/Private mode</strong> — doesn't save your history or cookies (but doesn't make you invisible to your internet provider, unfortunately).</li>
+        </ul>
+
+        <div class="note-box">
+            💭 <strong>What I think about browsers:</strong> We use them every single day without thinking about how complex they are. Modern browsers are like mini operating systems — they run code, manage memory, handle security, and connect to networks. I honestly take them for granted most of the time.
+        </div>
+
+        <h2>📱 Browser on my phone vs computer</h2>
+        <p>Mobile browsers are a bit different. They have to deal with smaller screens, touch input, and slower connections sometimes. But most of the same ideas apply. Chrome on Android, Safari on iPhone, and Firefox on both — they all do the same basic job.</p>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️ | Web browsers explained my way</p>
+    </footer>
+</div>
+
 </body>
 </html>
