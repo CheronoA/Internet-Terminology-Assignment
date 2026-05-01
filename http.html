@@ -3,155 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTTP - Internet Terminology</title>
+    <title>HTTP - How browsers and servers talk</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
         }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
+            letter-spacing: 0.3px;
         }
-        nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
         }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
-        .method-box {
-            background: #f0f0f0;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-            font-family: monospace;
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
         }
-        .status-code {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin: 5px;
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
             font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
+
+        nav a:hover {
+            color: #bc6c25;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        .code-block {
+            background: #2d3e3b;
+            color: #f5e6d3;
+            font-family: monospace;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .status-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             margin: 20px 0;
         }
+
+        .status {
+            background: #f5f0e8;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .method {
+            background: #e8d5c4;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
+        }
+
         .back-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 14px;
         }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
             .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>📡 HTTP (Hypertext Transfer Protocol)</h1>
-            
-            <img src="images/http-image.jpg" alt="HTTP Protocol" onerror="this.src='https://via.placeholder.com/500x300?text=HTTP+Protocol'">
-            
-            <p><strong>HTTP</strong> is the application-layer protocol used to transfer data on the World Wide Web. It defines how requests are formatted by clients (browsers) and how servers respond.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <h2>🔑 Key HTTP Methods</h2>
-            <div class="method-box">
-                <strong>GET</strong> - Retrieve data from the server<br>
-                <strong>POST</strong> - Submit data to be processed<br>
-                <strong>PUT</strong> - Update existing resource<br>
-                <strong>DELETE</strong> - Remove a resource
-            </div>
+    <div class="card">
+        <h1>📡 HTTP — How Browsers and Servers Talk</h1>
 
-            <h2>📊 HTTP Status Codes</h2>
-            <p>
-                <span class="status-code">200 OK</span>
-                <span class="status-code">301 Redirect</span>
-                <span class="status-code">404 Not Found</span>
-                <span class="status-code">500 Server Error</span>
-            </p>
+        <img src="images/http-image.jpg" alt="HTTP request response cycle" onerror="this.src='https://via.placeholder.com/600x350?text=HTTP+Request+Response'">
 
-            <h2>🔄 HTTP Request-Response Cycle</h2>
-            <ol>
-                <li><strong>User enters URL</strong> - Types or clicks a link</li>
-                <li><strong>DNS resolution</strong> - Translates domain to IP</li>
-                <li><strong>TCP connection</strong> - 3-way handshake</li>
-                <li><strong>HTTP request sent</strong> - Browser asks for resource</li>
-                <li><strong>Server processes request</strong> - Executes logic</li>
-                <li><strong>HTTP response returned</strong> - Status code + content</li>
-                <li><strong>Browser renders page</strong> - Parses and displays</li>
-                <li><strong>Connection closed/kept alive</strong></li>
-            </ol>
+        <p><strong>HTTP (Hypertext Transfer Protocol)</strong> is the language that web browsers and web servers use to communicate with each other. Every time you click a link, submit a form, or refresh a page, HTTP is working behind the scenes.</p>
 
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> HTTP is like ordering food at a restaurant. You (the browser) tell the waiter (HTTP request) what you want. The waiter goes to the kitchen (server), gets your food, and brings it back to you (HTTP response). That's the whole cycle.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🔄 The HTTP Request-Response Cycle</h2>
+        <ol>
+            <li><strong>You enter a URL</strong> — or click a link in your browser</li>
+            <li><strong>DNS lookup</strong> — browser finds the server's IP address</li>
+            <li><strong>TCP connection</strong> — browser connects to the server (3-way handshake)</li>
+            <li><strong>HTTP request sent</strong> — browser asks for the webpage</li>
+            <li><strong>Server processes request</strong> — finds the file or runs code</li>
+            <li><strong>HTTP response returned</strong> — server sends back the content</li>
+            <li><strong>Browser renders the page</strong> — you see the website</li>
+            <li><strong>Connection closes or stays open</strong> — for faster future requests</li>
+        </ol>
+
+        <h2>📦 HTTP Methods (The different types of requests)</h2>
+        <div class="status-grid">
+            <span class="method">GET</span> — Retrieve data (view a webpage)
+            <span class="method">POST</span> — Submit data (login form, search)
+            <span class="method">PUT</span> — Update existing data (edit profile)
+            <span class="method">DELETE</span> — Remove data (delete a post)
+        </div>
+
+        <h2>📊 HTTP Status Codes (What the server tells you)</h2>
+        <div class="status-grid">
+            <span class="status">200 OK</span>
+            <span class="status">301 Moved Permanently</span>
+            <span class="status">404 Not Found</span>
+            <span class="status">403 Forbidden</span>
+            <span class="status">500 Internal Server Error</span>
+            <span class="status">503 Service Unavailable</span>
+        </div>
+        <ul>
+            <li><strong>2xx (Success)</strong> — everything worked fine (200 = OK)</li>
+            <li><strong>3xx (Redirect)</strong> — the page moved somewhere else</li>
+            <li><strong>4xx (Client Error)</strong> — you did something wrong (404 = page not found, 403 = you're not allowed)</li>
+            <li><strong>5xx (Server Error)</strong> — something broke on the server's side (500 = internal error)</li>
+        </ul>
+
+        <h2>📋 Example HTTP Request</h2>
+        <div class="code-block">
+            GET /index.html HTTP/1.1<br>
+            Host: www.example.com<br>
+            User-Agent: Chrome/120.0<br>
+            Accept: text/html
+        </div>
+
+        <h2>📋 Example HTTP Response</h2>
+        <div class="code-block">
+            HTTP/1.1 200 OK<br>
+            Content-Type: text/html<br>
+            Content-Length: 1234<br>
+            <br>
+            &lt;html&gt;&lt;body&gt;&lt;h1&gt;Welcome!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+        </div>
+
+        <h2>🔒 HTTPS — The Secure Version</h2>
+        <p>HTTPS is just HTTP with encryption (SSL/TLS). It protects your data from being read by hackers when it travels between your browser and the server. You can tell a site uses HTTPS when you see the padlock icon 🔒 in the address bar. Always look for that before entering passwords or credit card info.</p>
+
+        <div class="note-box">
+            💭 <strong>What I learned:</strong> HTTP seems simple, but it's everywhere. Every time I search Google, post on Instagram, or buy something online — HTTP is doing the work. And HTTPS is non-negotiable for anything sensitive. I never log into important sites without seeing that padlock.
+        </div>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️</p>
+    </footer>
+</div>
+
 </body>
 </html>
