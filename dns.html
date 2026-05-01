@@ -3,122 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNS - Internet Terminology</title>
+    <title>DNS - The phonebook of the internet</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #fef9ef;
+            color: #2d3e3b;
+            padding: 25px 20px;
+            line-height: 1.65;
         }
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            text-align: center;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 8px;
-            padding: 8px 12px;
-            border-radius: 25px;
-            font-size: 13px;
+
+        h1, h2, h3 {
+            font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
+            letter-spacing: 0.3px;
         }
+
+        h1 {
+            font-size: 3rem;
+            color: #bc6c25;
+            border-left: 6px solid #d4a373;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #6c584c;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px dotted #e3d5c8;
+            padding-bottom: 6px;
+        }
+
+        nav {
+            text-align: center;
+            background: #fffaf2;
+            padding: 15px 20px;
+            border-radius: 60px;
+            margin-bottom: 35px;
+            border: 1px solid #eeddcc;
+        }
+
+        nav a {
+            color: #7f5539;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
         nav a:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
+            color: #bc6c25;
+            text-decoration: underline;
         }
-        .container { max-width: 1000px; margin: 0 auto; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fffffffa;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            border: 1px solid #f0e2d0;
         }
-        h1 { color: #667eea; margin-bottom: 20px; font-size: 2rem; }
-        h2 { color: #764ba2; margin: 25px 0 15px 0; border-left: 4px solid #667eea; padding-left: 15px; }
-        p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        ul, ol { margin: 15px 0 15px 30px; line-height: 1.7; color: #444; }
-        li { margin: 8px 0; }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #3b4a47;
+        }
+
+        ul, ol {
+            margin: 20px 0 25px 35px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note-box {
+            background: #fff6ea;
+            border-left: 6px solid #d4a373;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: #563d2c;
+        }
+
+        .dns-step {
+            background: #f5f0e8;
+            padding: 12px 18px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border-left: 4px solid #bc6c25;
+        }
+
         img {
             max-width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #e3cfb5;
+            padding: 6px;
+            background: white;
         }
+
         .back-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            margin-top: 30px;
+            padding: 8px 20px;
+            background: #f4e9dd;
+            color: #7f5539;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 14px;
         }
-        .back-link:hover { transform: translateX(-5px); }
-        footer { text-align: center; margin-top: 30px; padding: 20px; color: white; }
-        @media (max-width: 768px) {
-            nav a { margin: 5px; padding: 5px 8px; font-size: 10px; }
+
+        .back-link:hover {
+            background: #e3d5c8;
+            color: #4a3320;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 13px;
+            color: #b1947c;
+            border-top: 1px solid #eeddcc;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 12px; }
             .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html">🏠 Home</a>
-            <a href="www.html">🌐 WWW</a>
-            <a href="tcpip.html">🔌 TCP/IP</a>
-            <a href="browsers.html">🧭 Browsers</a>
-            <a href="servers.html">🖥️ Servers</a>
-            <a href="url.html">🔗 URL</a>
-            <a href="dns.html">📞 DNS</a>
-            <a href="http.html">📡 HTTP</a>
-            <a href="intranet.html">🏢 Intranet</a>
-            <a href="extranet.html">🤝 Extranet</a>
-            <a href="multitier.html">📊 Multitier</a>
-            <a href="ftp.html">📁 FTP</a>
-            <a href="html.html">📝 HTML</a>
-            <a href="web1.html">📖 Web 1.0</a>
-            <a href="web2.html">✍️ Web 2.0</a>
-            <a href="web3.html">🧠 Web 3.0</a>
-            <a href="web4.html">🚀 Web 4.0</a>
-        </nav>
 
-        <div class="card">
-            <h1>📞 DNS (Domain Name System)</h1>
-            
-            <img src="images/dns-image.jpg" alt="DNS Diagram" onerror="this.src='https://via.placeholder.com/500x300?text=DNS+Diagram'">
-            
-            <p><strong>DNS</strong> is the internet's phonebook. It translates human-readable domain names (like google.com) into machine-readable IP addresses (like 142.250.190.46) so computers can locate each other.</p>
+<div class="container">
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="www.html">🌐 WWW</a>
+        <a href="tcpip.html">🔌 TCP/IP</a>
+        <a href="browsers.html">🧭 Browsers</a>
+        <a href="servers.html">🖥️ Servers</a>
+        <a href="url.html">🔗 URL</a>
+        <a href="dns.html">📞 DNS</a>
+        <a href="http.html">📡 HTTP</a>
+        <a href="intranet.html">🏢 Intranet</a>
+        <a href="extranet.html">🤝 Extranet</a>
+        <a href="multitier.html">📊 Multitier</a>
+        <a href="ftp.html">📁 FTP</a>
+        <a href="html.html">📝 HTML</a>
+        <a href="web1.html">📖 Web 1.0</a>
+        <a href="web2.html">✍️ Web 2.0</a>
+        <a href="web3.html">🧠 Web 3.0</a>
+        <a href="web4.html">🚀 Web 4.0</a>
+    </nav>
 
-            <h2>🔍 How DNS Works</h2>
-            <ol>
-                <li>User types "www.example.com" into browser</li>
-                <li>Browser checks local cache</li>
-                <li>Query goes to Recursive DNS Resolver (ISP)</li>
-                <li>Resolver queries Root DNS Server → finds .com TLD server</li>
-                <li>TLD server points to Authoritative DNS Server</li>
-                <li>Authoritative server returns the IP address</li>
-                <li>Browser connects to the website</li>
-            </ol>
+    <div class="card">
+        <h1>📞 DNS — The Phonebook of the Internet</h1>
 
-            <a href="index.html" class="back-link">← Back to all terms</a>
+        <img src="images/dns-image.jpg" alt="DNS lookup diagram" onerror="this.src='https://via.placeholder.com/600x350?text=DNS+Diagram'">
+
+        <p><strong>DNS (Domain Name System)</strong> is like a phonebook for the internet. It translates human-friendly website names (like google.com) into machine-friendly IP addresses (like 142.250.190.46) so computers can find each other.</p>
+
+        <div class="note-box">
+            ✏️ <strong>My simple way to think about it:</strong> When you want to call a friend, you look up their name in your phone contacts, and your phone dials their number. DNS does the same thing — you type "youtube.com", and DNS finds the number (IP address) behind it.
         </div>
-        <footer>© 2026 Internet Terminology Assignment | Web Application Development</footer>
+
+        <h2>🔍 How DNS works (step by step)</h2>
+        <div class="dns-step"><strong>1.</strong> You type "www.google.com" into your browser</div>
+        <div class="dns-step"><strong>2.</strong> Your computer checks its local cache (has it visited this site before?)</div>
+        <div class="dns-step"><strong>3.</strong> If not found, the query goes to your ISP's DNS resolver</div>
+        <div class="dns-step"><strong>4.</strong> The resolver asks a Root DNS Server where to find .com addresses</div>
+        <div class="dns-step"><strong>5.</strong> The .com TLD server points to Google's Authoritative DNS Server</div>
+        <div class="dns-step"><strong>6.</strong> The Authoritative server returns the IP address (like 142.250.190.46)</div>
+        <div class="dns-step"><strong>7.</strong> Your browser receives the IP and connects to Google</div>
+
+        <h2>📋 Types of DNS Records</h2>
+        <ul>
+            <li><strong>A Record</strong> — Maps a domain to an IPv4 address</li>
+            <li><strong>AAAA Record</strong> — Maps a domain to an IPv6 address</li>
+            <li><strong>CNAME Record</strong> — Aliases one domain to another (like www to @)</li>
+            <li><strong>MX Record</strong> — Directs email to mail servers</li>
+            <li><strong>TXT Record</strong> — Stores text information (used for verification)</li>
+        </ul>
+
+        <h2>🌐 Why DNS matters</h2>
+        <p>Imagine having to memorize numbers like <code>172.217.168.46</code> for every website you visit. That would be impossible. DNS makes the internet usable for normal people. It's one of those behind-the-scenes technologies we never think about, but without it, the web would be a very different place.</p>
+
+        <div class="note-box">
+            💭 <strong>Fun fact:</strong> There are 13 root DNS servers worldwide. They don't store every domain name — they just know where to find the right TLD servers (.com, .org, .ke, etc.). It's like a giant tree of directories.
+        </div>
+
+        <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
+
+    <footer>
+        <p>Made by me, for my WAD assignment 🖊️</p>
+    </footer>
+</div>
+
 </body>
 </html>
