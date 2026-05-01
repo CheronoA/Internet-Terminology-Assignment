@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Browsers - Our window to the internet</title>
     <style>
-        /* Handwritten, personal, notebook-style CSS */
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
         * {
@@ -22,7 +21,7 @@
             line-height: 1.65;
         }
 
-        h1, h2, h3, .handwritten {
+        h1, h2, h3 {
             font-family: 'Caveat', 'Georgia', cursive;
             font-weight: 500;
             letter-spacing: 0.3px;
@@ -50,7 +49,6 @@
             padding: 15px 20px;
             border-radius: 60px;
             margin-bottom: 35px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             border: 1px solid #eeddcc;
         }
 
@@ -61,7 +59,6 @@
             font-size: 14px;
             font-family: 'Inter', sans-serif;
             font-weight: 500;
-            transition: 0.2s;
         }
 
         nav a:hover {
@@ -79,7 +76,6 @@
             border-radius: 16px;
             padding: 35px 40px;
             margin-bottom: 35px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
             border: 1px solid #f0e2d0;
         }
 
@@ -94,11 +90,6 @@
 
         li {
             margin: 10px 0;
-        }
-
-        a {
-            color: #b85c1a;
-            text-decoration: underline;
         }
 
         .note-box {
@@ -119,7 +110,6 @@
             border: 1px solid #e3cfb5;
             padding: 6px;
             background: white;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
         .back-link {
@@ -131,7 +121,6 @@
             text-decoration: none;
             border-radius: 40px;
             font-size: 14px;
-            transition: 0.2s;
         }
 
         .back-link:hover {
@@ -149,22 +138,11 @@
         }
 
         @media (max-width: 700px) {
-            body {
-                padding: 12px;
-            }
-            .card {
-                padding: 20px;
-            }
-            nav a {
-                margin: 5px;
-                font-size: 11px;
-            }
-            h1 {
-                font-size: 2.3rem;
-            }
-            h2 {
-                font-size: 1.8rem;
-            }
+            body { padding: 12px; }
+            .card { padding: 20px; }
+            nav a { margin: 5px; font-size: 11px; }
+            h1 { font-size: 2.3rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -192,41 +170,40 @@
     </nav>
 
     <div class="card">
-        <h1>🧭 Web Browsers — Our Window to the Internet</h1>
+        <h1>🧭 Web Browsers</h1>
 
-        <img src="images/browsers-image.jpg" alt="Popular web browsers collage" onerror="this.src='https://via.placeholder.com/600x350?text=Popular+Web+Browsers'">
+        <img src="images/browsers-image.jpg" alt="Web browsers" onerror="this.src='https://via.placeholder.com/600x350?text=Web+Browsers'">
 
-        <h2>What is a web browser?</h2>
-        <p>A <strong>web browser</strong> is the software you use to visit websites. It's like a magical window that lets you see and interact with the World Wide Web. When you type a URL like <code>google.com</code> or click a link, the browser goes out, fetches the webpage from a server somewhere in the world, and then displays it on your screen — with text, images, videos, and buttons all arranged nicely.</p>
-        
+        <p>A <strong>web browser</strong> is the software you use to visit websites. When you type a URL or click a link, the browser fetches the webpage from a server and displays it on your screen.</p>
+
         <div class="note-box">
-            ✏️ <strong>My simple way to think about it:</strong> A browser is like a restaurant waiter. You tell them what you want (type a URL). They go to the kitchen (the web server), bring back your food (the webpage), and serve it to you in a nice plate (rendered on your screen). Without the waiter, you'd have to go to the kitchen yourself — which would be a huge mess.
+            ✏️ <strong>My way to think about it:</strong> A browser is like a restaurant waiter. You tell them what you want, they go to the kitchen (server), bring back your food (webpage), and serve it to you.
         </div>
 
-        <h2>🌍 Popular browsers I use (or have tried)</h2>
+        <h2>🌍 Popular browsers</h2>
         <ul>
-            <li><strong>Google Chrome</strong> — the most popular one. Fast, but eats RAM like crazy. I use it for most things.</li>
-            <li><strong>Mozilla Firefox</strong> — more privacy-focused. I use it when I don't want Google tracking everything.</li>
-            <li><strong>Microsoft Edge</strong> — the new version is actually good. It's built on Chromium (same as Chrome).</li>
-            <li><strong>Safari</strong> — only on Apple devices. Very efficient on MacBooks.</li>
-            <li><strong>Opera</strong> — has built-in VPN and some cool features. I've tried it a few times.</li>
-            <li><strong>Brave</strong> — blocks ads and trackers by default. Some of my friends swear by it.</li>
+            <li><strong>Google Chrome</strong> — popular but uses lots of RAM</li>
+            <li><strong>Mozilla Firefox</strong> — more privacy-focused</li>
+            <li><strong>Microsoft Edge</strong> — new version is actually good</li>
+            <li><strong>Safari</strong> — only on Apple devices</li>
+            <li><strong>Opera</strong> — has built-in VPN</li>
+            <li><strong>Brave</strong> — blocks ads and trackers</li>
         </ul>
 
-        <h2>⚙️ How a browser works (behind the scenes)</h2>
+        <h2>⚙️ How a browser works</h2>
         <ol>
-            <li><strong>You enter a URL</strong> — or click a link.</li>
-            <li><strong>DNS lookup</strong> — the browser finds the IP address of the website (like looking up a phone number).</li>
-            <li><strong>HTTP request</strong> — the browser asks the server for the webpage.</li>
-            <li><strong>Server responds</strong> — sends back HTML, CSS, JavaScript, images, etc.</li>
-            <li><strong>Parsing and rendering</strong> — the browser reads the code, builds the structure, applies styles, runs interactive code, and paints the page on your screen.</li>
+            <li>You enter a URL or click a link</li>
+            <li>Browser finds the server's IP address (DNS lookup)</li>
+            <li>Browser sends an HTTP request to the server</li>
+            <li>Server sends back HTML, CSS, JavaScript, images</li>
+            <li>Browser reads the code and displays the page</li>
         </ol>
 
         <a href="index.html" class="back-link">← Back to all terms</a>
     </div>
 
     <footer>
-        <p>Made by me, for my WAD assignment 🖊️ | Web browsers explained my way</p>
+        <p>Made by me, for my WAD assignment 🖊️</p>
     </footer>
 </div>
 
