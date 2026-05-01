@@ -1,53 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HTTP - Internet Terminology</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP - Hypertext Transfer Protocol</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav { background: #333; padding: 10px; margin-bottom: 20px; }
-        nav a { color: white; margin-right: 15px; text-decoration: none; }
-        nav a:hover { text-decoration: underline; }
-        h1 { color: #333; }
-        img { max-width: 500px; margin: 20px 0; border: 1px solid #ccc; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #555;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .method-box {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+
+        .status-code {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                margin: 5px;
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="www.html">🌐 WWW</a>
+            <a href="tcpip.html">🔌 TCP/IP</a>
+            <a href="browsers.html">🧭 Browsers</a>
+            <a href="servers.html">🖥️ Servers</a>
+            <a href="url.html">🔗 URL</a>
+            <a href="dns.html">📞 DNS</a>
+            <a href="http.html">📡 HTTP</a>
+            <a href="intranet.html">🏢 Intranet</a>
+            <a href="extranet.html">🤝 Extranet</a>
+            <a href="multitier.html">📊 Multitier</a>
+            <a href="ftp.html">📁 FTP</a>
+            <a href="html.html">📝 HTML</a>
+            <a href="web1.html">📖 Web 1.0</a>
+            <a href="web2.html">✍️ Web 2.0</a>
+            <a href="web3.html">🧠 Web 3.0</a>
+            <a href="web4.html">🚀 Web 4.0</a>
+        </nav>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="www.html">WWW</a>
-        <a href="tcpip.html">TCP/IP</a>
-        <a href="browsers.html">Browsers</a>
-        <a href="servers.html">Servers</a>
-        <a href="url.html">URL</a>
-        <a href="dns.html">DNS</a>
-        <a href="http.html">HTTP</a>
-        <a href="intranet.html">Intranet</a>
-        <a href="extranet.html">Extranet</a>
-        <a href="multitier.html">Multitier</a>
-        <a href="ftp.html">FTP</a>
-        <a href="html.html">HTML</a>
-        <a href="web1.html">Web 1.0</a>
-        <a href="web2.html">Web 2.0</a>
-        <a href="web3.html">Web 3.0</a>
-        <a href="web4.html">Web 4.0</a>
-    </nav>
+        <div class="card">
+            <h1>📡 HTTP (Hypertext Transfer Protocol)</h1>
+            
+            <p><strong>HTTP</strong> is the application-layer protocol used to transfer data on the World Wide Web. It defines how requests are formatted by clients (browsers) and how servers respond.</p>
 
-    <h1>HTTP (Hypertext Transfer Protocol)</h1>
-    
-    <img src="images/http-image.jpg" alt="HTTP request-response diagram">
-    
-    <p><strong>HTTP (Hypertext Transfer Protocol)</strong> is the foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted between web browsers and servers.</p>
-    
-    <p>Key facts about HTTP:</p>
-    <ul>
-        <li>HTTP uses a request-response model</li>
-        <li>Common methods: GET (retrieve data), POST (send data)</li>
-        <li>Status codes: 200 (OK), 404 (Not Found), 500 (Server Error)</li>
-        <li>HTTPS is the secure version (encrypted with SSL/TLS)</li>
-    </ul>
-    
-    <p><a href="index.html">← Back to all terms</a></p>
+            <h2>🔑 Key HTTP Methods</h2>
+            <div class="method-box">
+                <strong>GET</strong> - Retrieve data from the server<br>
+                <strong>POST</strong> - Submit data to be processed<br>
+                <strong>PUT</strong> - Update existing resource<br>
+                <strong>DELETE</strong> - Remove a resource
+            </div>
 
+            <h2>📊 HTTP Status Codes</h2>
+            <p>
+                <span class="status-code">200 OK</span>
+                <span class="status-code">301 Redirect</span>
+                <span class="status-code">404 Not Found</span>
+                <span class="status-code">500 Server Error</span>
+            </p>
+
+            <h2>🔄 HTTP Request-Response Cycle</h2>
+            <p>The request-response cycle is the fundamental mechanism of the web. Every time a user visits a page, the browser and server go through the following steps:</p>
+
+            <ol>
+                <li><strong>User enters URL</strong> - The user types a URL or clicks a link in the browser</li>
+                <li><strong>DNS resolution</strong> - The browser queries DNS to translate domain name to IP address</li>
+                <li><strong>TCP connection</strong> - Browser establishes TCP connection with server (3-way handshake)</li>
+                <li><strong>HTTP request sent</strong> - Browser sends HTTP request with method, path, headers</li>
+                <li><strong>Server processes request</strong> - Web server executes application logic (database queries, authentication)</li>
+                <li><strong>HTTP response returned</strong> - Server sends back status code, headers, and response body</li>
+                <li><strong>Browser renders page</strong> - Browser parses HTML, builds DOM, paints the page</li>
+                <li><strong>Connection closed/kept alive</strong> - TCP connection is closed or kept for future requests</li>
+            </ol>
+
+            <div class="diagram-placeholder">
+                <strong>📋 HTTP Request-Response Diagram</strong><br>
+                Browser → DNS Lookup → TCP Connection → HTTP Request → Server → HTTP Response → Browser Renders
+                <br><br>
+                <em>📌 Download a diagram of HTTP request-response cycle from Pinterest and save as <code>http-cycle.jpg</code> in the images folder</em>
+            </div>
+
+            <h2>🔒 HTTPS (Secure HTTP)</h2>
+            <p>HTTPS adds encryption (SSL/TLS) on top of HTTP, securing data transmission between browser and server. It protects against eavesdropping and man-in-the-middle attacks.</p>
+
+            <h2>📋 Example HTTP Request</h2>
+            <div class="method-box">
+                GET /index.html HTTP/1.1<br>
+                Host: www.example.com<br>
+                User-Agent: Chrome/120.0<br>
+                Accept: text/html
+            </div>
+
+            <h2>📋 Example HTTP Response</h2>
+            <div class="method-box">
+                HTTP/1.1 200 OK<br>
+                Content-Type: text/html<br>
+                Content-Length: 1234<br>
+                <br>
+                &lt;html&gt;...&lt;/html&gt;
+            </div>
+
+            <a href="index.html" class="back-link">← Back to all terms</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Internet Terminology Assignment | Web Application Development</p>
+        </footer>
+    </div>
 </body>
 </html>
